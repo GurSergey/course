@@ -10,7 +10,7 @@ CREATE TABLE poll(
 	title varchar(255) NOT NULL,
 	visible boolean NOT NULL,
 	date_to date NOT NULL,
-	"current_date" date NOT NULL,
+	start_date date NOT NULL CHECK (date_to < start_date ),
 	create_date date NOT NULL
 );
 
