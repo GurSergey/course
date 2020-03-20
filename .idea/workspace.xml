@@ -1,30 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="course:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="77ab5f19-9232-4468-8ee4-2bb7e7c1ad53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/basic.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlets/PollEditServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/course_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/course_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/mypage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assembly.sh" beforeDir="false" afterPath="$PROJECT_DIR$/assembly.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basic.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/basic.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course.iml" beforeDir="false" afterPath="$PROJECT_DIR$/course.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AnswerEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/BuilderQuery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/DBConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/PollEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/QuestionEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/VariantEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/VoterEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/PollEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/PollEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlets/PollEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/AnswerEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/AnswerEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/BuilderQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/BuilderQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/PollEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/PollEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/QuestionEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/QuestionEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/VariantEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/VariantEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/VoterEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/VoterEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/servlets/PollEditServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8082/work/Tomcat/localhost/ROOT/basic.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/basic.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/polls.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockerExecCommand">
+    <ExecCommand>
+      <option name="command" value="bash" />
+      <option name="imageId" value="tomcat:9.0" />
+    </ExecCommand>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="course" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,9 +68,10 @@
   <component name="ProjectId" id="1YidwgxryX2AKbNew44Q5Z3jjE5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,11 +79,17 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/WebContent/views" />
+      <recent name="$PROJECT_DIR$/WebContent" />
+      <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -69,7 +104,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.Unnamed">
+  <component name="RunManager" selected="Remote.Unnamed">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="course" />
@@ -87,15 +122,73 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="Remote" nameIsGenerated="true">
+      <module name="course" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="127.0.0.1" />
+      <option name="PORT" value="8002" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8002" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="JAR Application.Unnamed" />
+      <item itemvalue="Remote.Unnamed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <option name="contentProportion" value="0.22369878" />
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6b9917ec" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6b9917ec" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@643df0cb" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6b9917ec" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@643df0cb" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@72d0219a" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6b9917ec" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@643df0cb" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@358e094a" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -112,6 +205,8 @@
       <workItem from="1584031410690" duration="2132000" />
       <workItem from="1584458235564" duration="10076000" />
       <workItem from="1584615412937" duration="8978000" />
+      <workItem from="1584678854628" duration="15156000" />
+      <workItem from="1584709361077" duration="14175000" />
     </task>
     <servers />
   </component>
@@ -135,18 +230,28 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlets/PollEditServlet.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/basic.jsp</url>
+          <url>file://$PROJECT_DIR$/src/main/resources/basic.jsp</url>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/views/basic.jsp</url>
-          <line>7</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollEditServlet.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollEditServlet.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollEditServlet.java</url>
+          <line>22</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/mypage.jsp</url>
+          <line>18</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
