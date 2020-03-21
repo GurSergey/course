@@ -1,10 +1,19 @@
-package com.company;
+package com.company.enitities;
 
 import java.sql.Date;
 
 public class PollEntity implements Entity {
     public int getId() {
         return id;
+    }
+
+    public PollEntity(int id, String title, boolean visible, Date dateTo, Date currentDate, Date createDate) {
+        this.id = id;
+        this.title = title;
+        this.visible = visible;
+        this.dateTo = dateTo;
+        this.currentDate = currentDate;
+        this.createDate = createDate;
     }
 
     public void setId(int id) {

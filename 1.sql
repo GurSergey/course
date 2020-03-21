@@ -2,6 +2,7 @@ CREATE TABLE voter (
 	id serial PRIMARY KEY,
 	registration_date date NOT NULL,
 	name varchar(255) NOT NULL,
+	password varchar(255) NOT NULL,
 	phone varchar(11) UNIQUE
 );
 
@@ -36,10 +37,10 @@ CREATE TABLE answer(
 
 
 INSERT INTO voter
-VALUES (1,'11.11.2019', 'Ivan', '89171231234'),
-       (2,'11.10.2019', 'Serge', '89174561234'),
-       (3,'10.10.2019', 'Nikolay', '89674561234'),
-       (4,'10.10.2019', 'Olga', '89674561534');
+VALUES (1,'11.11.2019', 'Ivan', '1720e61cd37718a479b0ff153d374aed', '89171231234'),
+       (2,'11.10.2019', 'Serge', '74ce383083e38d12007cdffcd6fe5448', '89174561234'),
+       (3,'10.10.2019', 'Nikolay', '6f1a41ff6dae02f091f5db87223b080e', '89674561234'),
+       (4,'10.10.2019', 'Olga', '29069193701fce7e4a7a121cc3a70867', '89674561534');
 
 INSERT INTO poll
 VALUES (1, 'Опрос о реконструкции парка.', true, '10.10.2019', '12.10.2019', '11.10.2019');

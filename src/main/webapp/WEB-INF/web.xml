@@ -5,13 +5,25 @@
          version="3.0">
 
     <servlet>
-        <servlet-name>mainServlet</servlet-name>
+        <servlet-name>pollEditServlet</servlet-name>
         <servlet-class>com.company.servlet.PollEditServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>mainServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>pollEditServlet</servlet-name>
+        <url-pattern>/admin/polls</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>adminMenuServlet</servlet-name>
+        <servlet-class>com.company.servlet.AdminMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminMenuServlet</servlet-name>
+        <url-pattern>/admin/menu</url-pattern>
+    </servlet-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 </web-app>

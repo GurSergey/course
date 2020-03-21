@@ -1,4 +1,4 @@
-package com.company;
+package com.company.enitities;
 
 import java.util.List;
 

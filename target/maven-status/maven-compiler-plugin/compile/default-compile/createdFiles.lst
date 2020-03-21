@@ -1,0 +1,10 @@
+com/company/services/PollsService.class
+com/company/enitities/QuestionEntity.class
+com/company/enitities/VariantEntity.class
+com/company/enitities/Entity.class
+com/company/enitities/AnswerEntity.class
+com/company/db/DBConnection.class
+com/company/enitities/VoterEntity.class
+com/company/enitities/PollEntity.class
+com/company/db/PollsRepositoryDB.class
+com/company/repositories/PollsRepository.class
