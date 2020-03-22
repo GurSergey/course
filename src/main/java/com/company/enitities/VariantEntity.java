@@ -3,6 +3,8 @@ package com.company.enitities;
 public class VariantEntity implements Entity {
     int id;
 
+    public VariantEntity(){}
+
     public int getId() {
         return id;
     }

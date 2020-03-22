@@ -6,6 +6,8 @@ public class VoterEntity implements Entity {
     int id;
     Date registrationDate;
 
+    public VoterEntity(){}
+
     public int getId() {
         return id;
     }

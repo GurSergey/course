@@ -7,12 +7,14 @@ public class PollEntity implements Entity {
         return id;
     }
 
-    public PollEntity(int id, String title, boolean visible, Date dateTo, Date currentDate, Date createDate) {
+    public PollEntity(){}
+
+    public PollEntity(int id, String title, boolean visible, Date dateTo, Date startDate, Date createDate) {
         this.id = id;
         this.title = title;
         this.visible = visible;
         this.dateTo = dateTo;
-        this.currentDate = currentDate;
+        this.startDate = startDate;
         this.createDate = createDate;
     }
 
@@ -44,12 +46,12 @@ public class PollEntity implements Entity {
         this.dateTo = dateTo;
     }
 
-    public Date getCurrentDate() {
-        return currentDate;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setCurrentDate(Date currentDate) {
-        this.currentDate = currentDate;
+    public void setStartDate(Date currentDate) {
+        this.startDate = currentDate;
     }
 
     public Date getCreateDate() {
@@ -64,6 +66,6 @@ public class PollEntity implements Entity {
     String title;
     boolean visible;
     Date dateTo;
-    Date currentDate;
+    Date startDate;
     Date createDate;
 }

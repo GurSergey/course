@@ -7,6 +7,8 @@ public class QuestionEntity implements Entity {
     int pollId;
     PollEntity poll;
 
+    public QuestionEntity(){}
+
     public int getId() {
         return id;
     }

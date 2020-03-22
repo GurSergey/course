@@ -3,6 +3,8 @@ package com.company.enitities;
 import java.sql.Date;
 
 public class AnswerEntity implements Entity {
+    public AnswerEntity(){}
+
     public int getId() {
         return id;
     }

@@ -6,11 +6,29 @@
 
     <servlet>
         <servlet-name>pollEditServlet</servlet-name>
-        <servlet-class>com.company.servlet.PollEditServlet</servlet-class>
+        <servlet-class>com.company.servlet.PollsEditServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>pollEditServlet</servlet-name>
         <url-pattern>/admin/polls</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>questionsEditServlet</servlet-name>
+        <servlet-class>com.company.servlet.QuestionsEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>questionsEditServlet</servlet-name>
+        <url-pattern>/admin/questions/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>variantsEditServlet</servlet-name>
+        <servlet-class>com.company.servlet.VariantsEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>variantsEditServlet</servlet-name>
+        <url-pattern>/admin/variants</url-pattern>
     </servlet-mapping>
 
     <servlet>
