@@ -1,7 +1,11 @@
+com/company/exceptions/SelectException.class
 com/company/enitities/Entity.class
+com/company/exceptions/InsertException.class
 com/company/db/DBConnection.class
+com/company/exceptions/DeleteException.class
 com/company/enitities/VoterEntity.class
 com/company/servlet/AdminMenuServlet.class
+com/company/filters/UTF8Filter.class
 com/company/db/PollsRepositoryDB.class
 com/company/services/PollsService.class
 com/company/enitities/QuestionEntity.class
@@ -9,6 +13,7 @@ com/company/enitities/VariantEntity.class
 com/company/servlet/UserMenuServlet.class
 com/company/servlet/QuestionsEditServlet.class
 com/company/enitities/AnswerEntity.class
+com/company/enums/EntityError.class
 com/company/filters/UserSessionFilter.class
 com/company/servlet/PollResultsServlet.class
 com/company/servlet/PollsEditServlet.class
@@ -16,4 +21,5 @@ com/company/enums/Roles.class
 com/company/servlet/UserAuthServlet.class
 com/company/enitities/PollEntity.class
 com/company/servlet/VariantsEditServlet.class
+com/company/exceptions/UpdateException.class
 com/company/repositories/PollsRepository.class

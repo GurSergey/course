@@ -17,9 +17,9 @@ public class AdminMenuServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PollsService service = new PollsService(new PollsRepositoryDB());
-        request.setAttribute("polls", service.getPolls());
-        request.getRequestDispatcher("polls.jsp").forward(request, response);
+//        PollsService service = new PollsService(new PollsRepositoryDB());
+//        request.setAttribute("polls", service.getPolls());
+//        request.getRequestDispatcher("polls.jsp").forward(request, response);
 
     }
 }

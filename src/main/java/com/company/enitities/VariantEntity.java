@@ -25,6 +25,13 @@ public class VariantEntity implements Entity {
         return question;
     }
 
+    public VariantEntity(int id, int questionId, QuestionEntity question, String text) {
+        this.id = id;
+        this.questionId = questionId;
+        this.question = question;
+        this.text = text;
+    }
+
     public void setQuestion(QuestionEntity question) {
         this.question = question;
     }

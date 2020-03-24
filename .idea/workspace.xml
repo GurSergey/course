@@ -7,33 +7,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77ab5f19-9232-4468-8ee4-2bb7e7c1ad53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/enums/EntityError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/exceptions/DeleteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/exceptions/InsertException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/exceptions/SelectException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/exceptions/UpdateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/polls.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/course_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/course_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/db/QuestionsRepositoryDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/db/VariantsRepositoryDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/filters/UTF8Filter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/repositories/QuestionsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/repositories/VariantsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/services/QuestionsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/services/VariantsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminAuthServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/OpenPollsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsResultServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/ResultPollsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAnswersServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserPollsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/VoteServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/questions.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/variants.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course.iml" beforeDir="false" afterPath="$PROJECT_DIR$/course.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/BuilderQuery.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/enitities/AnswerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/enitities/AnswerEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/enitities/PollEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/enitities/PollEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/enitities/QuestionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/enitities/QuestionEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/enitities/VariantEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/enitities/VariantEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/enitities/VoterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/enitities/VoterEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/filters/UserSessionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/filters/UserSessionFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repositories/PollsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repositories/PollsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/services/PollsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/services/PollsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/enums/EntityError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/enums/EntityError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminMenuServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminMenuServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/polls.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/polls.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -47,6 +52,10 @@
     <ExecCommand>
       <option name="command" value="bash" />
       <option name="imageId" value="tomcat:9.0" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="bash" />
+      <option name="imageId" value="tomcat:8.5-jdk8" />
     </ExecCommand>
   </component>
   <component name="FavoritesManager">
@@ -69,7 +78,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -82,6 +91,9 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/admin" />
       <recent name="$PROJECT_DIR$/WebContent/views" />
@@ -160,7 +172,29 @@
       <serviceView>
         <option name="contentProportion" value="0.22369878" />
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7b478424" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7b478424" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@679ab9d2" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7b478424" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@679ab9d2" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3703a086" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7b478424" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@679ab9d2" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4ca1faa1" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -185,7 +219,9 @@
       <workItem from="1584709361077" duration="14175000" />
       <workItem from="1584766495695" duration="6112000" />
       <workItem from="1584855600534" duration="1217000" />
-      <workItem from="1584871910866" duration="15608000" />
+      <workItem from="1584871910866" duration="24631000" />
+      <workItem from="1584966147858" duration="11391000" />
+      <workItem from="1585035105139" duration="9038000" />
     </task>
     <servers />
   </component>
@@ -214,18 +250,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java</url>
           <line>18</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/admin/polls.jsp</url>
-          <line>18</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java</url>
@@ -239,13 +265,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java</url>
-          <line>32</line>
+          <line>31</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="17" />
+          <line>41</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

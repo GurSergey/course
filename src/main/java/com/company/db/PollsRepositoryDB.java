@@ -45,7 +45,7 @@ public class PollsRepositoryDB implements PollsRepository {
     @Override
     public void savePoll(PollEntity poll) throws InsertException {
         try (Connection connection = DBConnection.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO polls(title, " +
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO poll(title, " +
                     "visible, " +
                     "date_to, " +
                     "start_date, " +
@@ -55,6 +55,8 @@ public class PollsRepositoryDB implements PollsRepository {
             preparedStatement.setDate(3, poll.getDateTo());
             preparedStatement.setDate(4, poll.getStartDate());
             preparedStatement.setDate(5, poll.getCreateDate());
+            preparedStatement.execute();
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new InsertException();
         }
@@ -63,7 +65,7 @@ public class PollsRepositoryDB implements PollsRepository {
     @Override
     public void updatePoll(PollEntity poll) throws UpdateException {
         try (Connection connection = DBConnection.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE polls SET title=?, " +
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE poll SET title=?, " +
                     "visible = ?, " +
                     "date_to = ?, " +
                     "start_date = ?, " +
@@ -74,6 +76,8 @@ public class PollsRepositoryDB implements PollsRepository {
             preparedStatement.setDate(4, poll.getStartDate());
             preparedStatement.setDate(5, poll.getCreateDate());
             preparedStatement.setInt(6, poll.getId());
+            preparedStatement.execute();
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new UpdateException();
         }
@@ -82,8 +86,10 @@ public class PollsRepositoryDB implements PollsRepository {
     @Override
     public void deletePoll(PollEntity poll) throws DeleteException {
         try (Connection connection = DBConnection.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE polls WWHERE id = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE poll WWHERE id = ?");
             preparedStatement.setInt(1, poll.getId());
+            preparedStatement.execute();
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new DeleteException();
         }

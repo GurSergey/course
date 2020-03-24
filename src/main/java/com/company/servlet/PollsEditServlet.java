@@ -18,8 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class PollsEditServlet extends HttpServlet {
     public PollsEditServlet(){
@@ -35,36 +34,36 @@ public class PollsEditServlet extends HttpServlet {
         } catch (SelectException e){
             context.setAttribute("error", EntityError.SELECT);
         }
-        getServletContext().getRequestDispatcher("polls.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/admin/polls.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PollEntity pollEntity = new PollEntity();
-        pollEntity.setId(Integer.parseInt(request.getParameter("id")));
+        pollEntity.setId(request.getParameterMap().containsKey("id")?Integer.parseInt(request.getParameter("id"))
+                : -1);
         pollEntity.setTitle( request.getParameter("title"));
         pollEntity.setVisible( Boolean.getBoolean(request.getParameter("visible")));
         pollEntity.setCreateDate(new Date((new java.util.Date()).getTime()));
-        pollEntity.setStartDate(Date.valueOf(request.getParameter("currentDate")));
+        pollEntity.setStartDate(Date.valueOf(request.getParameter("startDate")));
         pollEntity.setDateTo(Date.valueOf(request.getParameter("dateTo")));
         ServletContext context = this.getServletContext();
         try {
             PollsService service = new PollsService(new PollsRepositoryDB());
-            
-            switch (request.getParameter("typeReq"))
-            {
-                case "save":
-                    service.savePoll(pollEntity);
-                    break;
-                case "update":
-                    service.updatePoll(pollEntity);
-                    break;
-                case "delete":
-                    service.deletePoll(pollEntity);
-                    break;
+
+            if(request.getParameterMap().containsKey("save")){
+                service.savePoll(pollEntity);
+                context.setAttribute("error", EntityError.NO_ERROR_INSERT);
+            }
+            if(request.getParameterMap().containsKey( "update")){
+                service.updatePoll(pollEntity);
+                context.setAttribute("error", EntityError.NO_ERROR_UPDATE);
+            }
+            if(request.getParameterMap().containsKey("delete")){
+                service.deletePoll(pollEntity);
+                context.setAttribute("error", EntityError.NO_ERROR_DELETE);
             }
             context.setAttribute("polls", service.getPolls());
-            context.setAttribute("error", EntityError.NO);
         } catch (SelectException e){
             context.setAttribute("error", EntityError.SELECT);
         } catch (InsertException e){
@@ -74,6 +73,6 @@ public class PollsEditServlet extends HttpServlet {
         } catch (DeleteException e) {
             context.setAttribute("error", EntityError.DELETE);
         }
-        getServletContext().getRequestDispatcher("polls.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/admin/polls.jsp").forward(request, response);
     }
 }

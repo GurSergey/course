@@ -7,6 +7,15 @@ public class QuestionEntity implements Entity {
     int pollId;
     PollEntity poll;
 
+
+    public QuestionEntity(int id, int pollId, PollEntity poll, String question, Date createdDate) {
+        this.id = id;
+        this.pollId = pollId;
+        this.poll = poll;
+        this.question = question;
+        this.createdDate = createdDate;
+    }
+
     public QuestionEntity(){}
 
     public int getId() {
