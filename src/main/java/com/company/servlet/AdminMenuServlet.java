@@ -4,6 +4,7 @@ import com.company.db.PollsRepositoryDB;
 import com.company.services.PollsService;
 
 import javax.servlet.Servlet;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,8 @@ public class AdminMenuServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        PollsService service = new PollsService(new PollsRepositoryDB());
-//        request.setAttribute("polls", service.getPolls());
-//        request.getRequestDispatcher("polls.jsp").forward(request, response);
+        ServletContext context = getServletContext();
+        context.getRequestDispatcher("/admin/menu.jsp").forward(request, response);
 
     }
 }

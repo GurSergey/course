@@ -1,4 +1,6 @@
 package com.company.servlet;
 
-public class UserAnswersServlet {
+import javax.servlet.http.HttpServlet;
+
+public class UserAnswersServlet extends HttpServlet {
 }

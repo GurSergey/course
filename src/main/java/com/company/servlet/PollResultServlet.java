@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class PollResultsServlet extends HttpServlet {
-    public PollResultsServlet(){
+public class PollResultServlet extends HttpServlet {
+    public PollResultServlet(){
         super();
     }
 
