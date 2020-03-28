@@ -9,7 +9,7 @@ import com.company.exceptions.InsertException;
 import com.company.exceptions.SelectException;
 import com.company.exceptions.UpdateException;
 import com.company.services.PollsService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

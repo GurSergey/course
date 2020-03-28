@@ -1,6 +1,7 @@
 package com.company.enitities;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class PollEntity implements Entity {
     public int getId() {
@@ -62,10 +63,30 @@ public class PollEntity implements Entity {
         this.createDate = createDate;
     }
 
+    public PollStatisticsEntity getStatistics() {
+        return statistics;
+    }
+
+    public void setStatistics(PollStatisticsEntity statistics) {
+        this.statistics = statistics;
+    }
+
     int id;
     String title;
     boolean visible;
     Date dateTo;
     Date startDate;
     Date createDate;
+
+
+    public ArrayList<QuestionEntity> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(ArrayList<QuestionEntity> questions) {
+        this.questions = questions;
+    }
+
+    ArrayList<QuestionEntity> questions = new ArrayList<>();
+    PollStatisticsEntity statistics;
 }

@@ -36,4 +36,25 @@ public class PollsService {
     public void deletePoll(PollEntity poll) throws DeleteException {
         repository.deletePoll(poll);
     }
+
+    public PollEntity[] getAllOpenPolls() throws SelectException{
+        return repository.getAllOpenPolls();
+    }
+
+    public PollEntity[] getAllEndedPolls() throws SelectException{
+        return repository.getAllEndedPolls();
+    }
+
+    public PollEntity getPollResult(int id) throws SelectException{
+        return repository.getPollResult(id);
+    }
+
+    public PollEntity getPollWithAnswersUser(int pollId, int userId) throws SelectException{
+        return repository.getPollWithAnswersUser(pollId, userId);
+    }
+
+    public PollEntity[] getPollsByUser(int userId) throws SelectException {
+        return repository.getPollsByUser(userId);
+    }
+
 }

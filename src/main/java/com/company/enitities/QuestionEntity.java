@@ -1,6 +1,7 @@
 package com.company.enitities;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class QuestionEntity implements Entity {
     int id;
@@ -60,4 +61,26 @@ public class QuestionEntity implements Entity {
 
     String question;
     Date createdDate;
+
+    public QuestionStatisticsEntity getQuestionsStatistics() {
+        return questionsStatistics;
+    }
+
+    public void setQuestionsStatistics(QuestionStatisticsEntity questions) {
+        this.questionsStatistics = questions;
+    }
+
+    public ArrayList<VariantEntity> getVariants() {
+        return variants;
+    }
+
+    public void setVariants(ArrayList<VariantEntity> variants) {
+        this.variants = variants;
+    }
+
+    ArrayList<VariantEntity> variants = new ArrayList<>();
+
+    QuestionStatisticsEntity questionsStatistics;
+
+
 }

@@ -3,9 +3,6 @@ package com.company.enitities;
 import java.sql.Date;
 
 public class VoterEntity implements Entity {
-    int id;
-    Date registrationDate;
-
     public VoterEntity(){}
 
     public int getId() {
@@ -40,6 +37,18 @@ public class VoterEntity implements Entity {
         this.phone = phone;
     }
 
+    public VoterEntity(int id, String login, Date registrationDate, String name, String phone) {
+        this.id = id;
+        this.login = login;
+        this.registrationDate = registrationDate;
+        this.name = name;
+        this.phone = phone;
+    }
+
+    int id;
+    Date registrationDate;
     String name;
     String phone;
+    String login;
+
 }

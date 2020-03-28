@@ -46,5 +46,26 @@ public class VariantEntity implements Entity {
 
     int questionId;
     QuestionEntity question;
+
     String text;
+
+    public VariantStatisticsEntity getVariantStatistics() {
+        return variantStatistics;
+    }
+
+    public void setVariantStatistics(VariantStatisticsEntity variantStatistics) {
+        this.variantStatistics = variantStatistics;
+    }
+
+    VariantStatisticsEntity variantStatistics;
+
+    public AnswerEntity getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(AnswerEntity answer) {
+        this.answer = answer;
+    }
+
+    AnswerEntity answer;
 }

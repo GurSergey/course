@@ -3,8 +3,6 @@ package com.company.enitities;
 import java.sql.Date;
 
 public class AnswerEntity implements Entity {
-    public AnswerEntity(){}
-
     public int getId() {
         return id;
     }
@@ -13,32 +11,33 @@ public class AnswerEntity implements Entity {
         this.id = id;
     }
 
-    public Date getRegistrationDate() {
-        return registrationDate;
+    public int getVoterId() {
+        return voterId;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
-        this.registrationDate = registrationDate;
+    public void setVoterId(int voterId) {
+        this.voterId = voterId;
     }
 
-    public String getName() {
-        return name;
+    public int getVariantId() {
+        return variantId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setVariantId(int variantId) {
+        this.variantId = variantId;
     }
 
-    public String getPhone() {
-        return phone;
+    public Date getAnswerDate() {
+        return answerDate;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setAnswerDate(Date answerDate) {
+        this.answerDate = answerDate;
     }
 
-    int id;
-    Date registrationDate;
-    String name;
-    String phone;
+    public int id;
+    public int voterId;
+    public int variantId;
+    public Date answerDate;
+    public String text;
 }

@@ -44,7 +44,7 @@ public class AdminAuthServlet extends HttpServlet {
         String login = request.getParameter("login");
         if(password.equals(PASS_ADMIN) && login.equals(LOGIN_ADMIN)){
             String sessionId = generateSessionId();
-            CookieHelper.setCookieByName(response, "adminSession", generateSessionId());
+            CookieHelper.setCookieByName(response, "adminSession", sessionId);
             AdminSessionStorage.setSession(sessionId);
         }
         ServletContext context = getServletContext();
