@@ -24,7 +24,136 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>pollEditServlet</servlet-name>
-        <url-pattern>/admin/polls</url-pattern>
+        <url-pattern>/admin/polls/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminMenuServlet</servlet-name>
+        <servlet-class>com.company.servlet.AdminMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminMenuServlet</servlet-name>
+        <url-pattern>/admin/menu/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminAuthServlet</servlet-name>
+        <servlet-class>com.company.servlet.AdminAuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminAuthServlet</servlet-name>
+        <url-pattern>/admin/auth/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminListOfUserServlet</servlet-name>
+        <servlet-class>com.company.servlet.AdminListOfUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminListOfUserServlet</servlet-name>
+        <url-pattern>/admin/list_users/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adminLogoutServlet</servlet-name>
+        <servlet-class>com.company.servlet.AdminLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminLogoutServlet</servlet-name>
+        <url-pattern>/admin/logout/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>openPollsServlet</servlet-name>
+        <servlet-class>com.company.servlet.OpenPollsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>openPollsServlet</servlet-name>
+        <url-pattern>/polls/open/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>pollResultServlet</servlet-name>
+        <servlet-class>com.company.servlet.PollResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pollResultServlet</servlet-name>
+        <url-pattern>/poll/result/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>pollsResultServlet</servlet-name>
+        <servlet-class>com.company.servlet.PollsResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pollsResultServlet</servlet-name>
+        <url-pattern>/polls/result/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>userAnswersServlet</servlet-name>
+        <servlet-class>com.company.servlet.UserAnswersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userAnswersServlet</servlet-name>
+        <url-pattern>/user/answers/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>userAuthServlet</servlet-name>
+        <servlet-class>com.company.servlet.UserAuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userAuthServlet</servlet-name>
+        <url-pattern>/user/auth/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>userLogoutServlet</servlet-name>
+        <servlet-class>com.company.servlet.UserLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userLogoutServlet</servlet-name>
+        <url-pattern>/user/logout/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>userMenuServlet</servlet-name>
+        <servlet-class>com.company.servlet.UserMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userMenuServlet</servlet-name>
+        <url-pattern>/user/menu/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>userPollsServlet</servlet-name>
+        <servlet-class>com.company.servlet.UserPollsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userPollsServlet</servlet-name>
+        <url-pattern>/user/polls/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>userRegistrationServlet</servlet-name>
+        <servlet-class>com.company.servlet.UserRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userRegistrationServlet</servlet-name>
+        <url-pattern>/user/registration/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>voteServlet</servlet-name>
+        <servlet-class>com.company.servlet.VoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>voteServlet</servlet-name>
+        <url-pattern>/user/vote/*</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -42,17 +171,9 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>variantsEditServlet</servlet-name>
-        <url-pattern>/admin/variants</url-pattern>
+        <url-pattern>/admin/variants/*</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>adminMenuServlet</servlet-name>
-        <servlet-class>com.company.servlet.AdminMenuServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>adminMenuServlet</servlet-name>
-        <url-pattern>/admin/menu</url-pattern>
-    </servlet-mapping>
 
 
     <welcome-file-list>

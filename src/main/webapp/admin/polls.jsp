@@ -63,7 +63,7 @@
                                            value="${poll.dateTo}"></td>
                                     <td><input type="submit" name="update" value="Сохранить" form="poll_form_${poll.id}"></td>
                                     <td><input type="submit" name="delete" value="Удалить" form="poll_form_${poll.id}"></td>
-                                    <td><a href="admin/questions/?poll_id=${poll.id}">
+                                    <td><a href="../../admin/questions/?pollId=${poll.id}">
                                         <button>Перейти к редактированию вопросов</button></a></td>
                             </tr>
                         </c:forEach>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Список открытых голосований</title>
+    <title>Список ответов голосований</title>
     <style>
         <%@include file="/css/style.css"%>
     </style>
@@ -31,15 +31,10 @@
     <h1>Заголовок голосования - ${poll.title}</h1>
     <jsp:useBean id="polls" scope="request" type="java.util.List"/>
     <c:forEach var="question" items="${poll.questions}">
-        <p>${question.title}</p>
-        <p>Всего высказалось по этому вопросу - ${question.questionsStatistics.countAnswers} человек</p>
-        <c:forEach var="variant" items="${question.variants}">
-            <p>${variant.text}. количество проголосовавших ${variant.variantStatistics.countAnswers} Процент
-                    ${variant.variantStatistics.countAnswers/question.questionsStatistics.countAnswers}</p>
-        </c:forEach>
+        <p>Вопрос ${question.question}</p>
+        <p>Ваш ответ ${question.viriants.get(0).text}</p>
         <br>
     </c:forEach>
-
 </div>
 </body>
 </html>

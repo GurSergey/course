@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 
 public class Main {
 
-    public static void main(String[] args) throws ServletException {
+    public static void main(String[] args) {
 
     }
 }

@@ -18,7 +18,7 @@ public class VariantsRepositoryDB implements VariantsRepository {
         try (Connection connection = DBConnection.getConnection()) {
             Statement statement = connection.createStatement();
             PreparedStatement preparedStatement = connection.prepareStatement(
-                    "SELECT id, question_id, text, " +
+                    "SELECT id, question_id, text " +
                             "FROM variants WHERE question_id = ? "
             );
             preparedStatement.setInt(1, questionId);

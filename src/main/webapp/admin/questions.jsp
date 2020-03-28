@@ -50,10 +50,10 @@
                                         <input name="pollId" type="hidden" value="${pollId}" form="question_form_${question.id}"></td>
                                     <td><input name="title" type="text" value="${question.question}" form="question_form_${question.id}"></td>
                                     <td><input name="createDate" type="date" form="question_form_${question.id}"
-                                               value="${question.createDate}"></td>
+                                               value="${question.createdDate}"></td>
                                     <td><input type="submit" name="update" value="Сохранить" form="question_form_${question.id}"></td>
                                     <td><input type="submit" name="delete" value="Удалить" form="question_form_${question.id}"></td>
-                                    <td><a href="admin/variants/?question_id=${question.id}">
+                                    <td><a href="../../admin/variants/?questionId=${question.id}">
                                         <button>Перейти к редактированию вариантов</button></a></td>
                             </tr>
                         </c:forEach>

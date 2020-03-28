@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Список открытых голосований</title>
+    <title>Проголосовать</title>
     <style>
         <%@include file="/css/style.css"%>
     </style>
@@ -28,17 +28,23 @@
     <c:if test="${error==EntityError.UPDATE}">
         <p style="color: red;">Возникла ошибка обновления записей из БД. Повторите попытку позже</p>
     </c:if>
-    <h1>Заголовок голосования - ${poll.title}</h1>
-    <jsp:useBean id="polls" scope="request" type="java.util.List"/>
-    <c:forEach var="question" items="${poll.questions}">
-        <p>${question.title}</p>
-        <p>Всего высказалось по этому вопросу - ${question.questionsStatistics.countAnswers} человек</p>
-        <c:forEach var="variant" items="${question.variants}">
-            <p>${variant.text}. количество проголосовавших ${variant.variantStatistics.countAnswers} Процент
-                    ${variant.variantStatistics.countAnswers/question.questionsStatistics.countAnswers}</p>
-        </c:forEach>
-        <br>
-    </c:forEach>
+    <h1>Заголовок голосования - ${question.poll.title}</h1>
+    <h1>Вопрос ${question.question}</h1>
+
+    <form>
+        <p>Please select your preferred contact method:</p>
+        <div>
+            <c:forEach var="variant" items="${question.variants}">
+            <input type="radio" id="${variant.id}"
+                   name="variant" value="${variant.id}" checked>
+            <label for="${variant.id}">${variant.text}</label>
+
+            </c:forEach>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 
 </div>
 </body>

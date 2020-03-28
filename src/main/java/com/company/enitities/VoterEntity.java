@@ -37,12 +37,13 @@ public class VoterEntity implements Entity {
         this.phone = phone;
     }
 
-    public VoterEntity(int id, String login, Date registrationDate, String name, String phone) {
+    public VoterEntity(int id, String login, Date registrationDate, String name, String phone, String password) {
         this.id = id;
         this.login = login;
         this.registrationDate = registrationDate;
         this.name = name;
         this.phone = phone;
+        this.password = password;
     }
 
     int id;
@@ -50,5 +51,23 @@ public class VoterEntity implements Entity {
     String name;
     String phone;
     String login;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    String password;
 
 }

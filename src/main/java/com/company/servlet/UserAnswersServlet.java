@@ -37,6 +37,7 @@ public class UserAnswersServlet extends HttpServlet {
             PollsService pollsService = new PollsService(new PollsRepositoryDB());
             String session = CookieHelper.getCookieByName(request,"userSession");
             PollEntity pollEntity = pollsService.getPollWithAnswersUser(pollId, UserSessionStorage.getIdUser(session));
+            context.setAttribute("poll", pollEntity);
         } catch (SelectException e) {
 
         }

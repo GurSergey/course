@@ -1,6 +1,7 @@
 package com.company.db;
 
 import com.company.enitities.VoterEntity;
+import com.company.exceptions.InsertException;
 import com.company.exceptions.SelectException;
 import com.company.repositories.UserRepository;
 
@@ -12,31 +13,14 @@ import java.util.ArrayList;
 
 public class UserRepositoryDB  implements UserRepository {
 
-    public static String hashedPassword(String st) {
-        MessageDigest messageDigest = null;
-        byte[] digest = new byte[0];
-        try {
-            messageDigest = MessageDigest.getInstance("MD5");
-            messageDigest.reset();
-            messageDigest.update(st.getBytes());
-            digest = messageDigest.digest();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        BigInteger bigInt = new BigInteger(1, digest);
-        String md5Hex = bigInt.toString(16);
-        while( md5Hex.length() < 32 ){
-            md5Hex = "0" + md5Hex;
-        }
-        return md5Hex;
-    }
+
 
     public VoterEntity[] getAllUsers() throws SelectException{
         ArrayList<VoterEntity> voters = new ArrayList<>();
         try (Connection connection = DBConnection.getConnection()) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(
-                    "SELECT id, login, registration_date,  name, password, phone" +
+                    "SELECT id, login, registration_date,  name, phone, password" +
                             " FROM voter WHERE login = ? and password = ?");
             while (resultSet.next()) {
                 voters.add(new VoterEntity(
@@ -44,7 +28,8 @@ public class UserRepositoryDB  implements UserRepository {
                         resultSet.getString(2),
                         resultSet.getDate(3),
                         resultSet.getString(4),
-                        resultSet.getString(5)
+                        resultSet.getString(5),
+                        resultSet.getString(6)
                 ));
             }
             resultSet.close();
@@ -60,10 +45,10 @@ public class UserRepositoryDB  implements UserRepository {
         try (Connection connection = DBConnection.getConnection()) {
 
             PreparedStatement preparedStatement = connection.prepareStatement(
-                    "SELECT id, login, registration_date,  name, password, phone" +
+                    "SELECT id, login, registration_date,  name, phone, password" +
                             " FROM voter WHERE login = ? and password = ?");
             preparedStatement.setString(1, login);
-            preparedStatement.setString(2, hashedPassword(password));
+            preparedStatement.setString(2,password);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (!resultSet.next() ) {
                 return new VoterEntity(
@@ -71,12 +56,32 @@ public class UserRepositoryDB  implements UserRepository {
                         resultSet.getString(2),
                         resultSet.getDate(3),
                         resultSet.getString(4),
-                        resultSet.getString(5)
+                        resultSet.getString(5),
+                        resultSet.getString(6)
                 );
             }
         } catch (SQLException e){
             throw new SelectException();
         }
         return null;
+    }
+
+    public void createUser(VoterEntity user) throws InsertException {
+        try (Connection connection = DBConnection.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO voter(registatration_date, " +
+                    "name, " +
+                    "password, " +
+                    "phone, " +
+                    "login) VALUES (?, ?, ?, ?, ?)");
+            preparedStatement.setDate(1, user.getRegistrationDate());
+            preparedStatement.setString(2, user.getName());
+            preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setString(4, user.getPhone());
+            preparedStatement.setString(5, user.getLogin());
+            preparedStatement.execute();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            throw new InsertException();
+        }
     }
 }
