@@ -9,7 +9,7 @@ public class CookieHelper {
     public static String getCookieByName(HttpServletRequest request, String name){
         Cookie[] cookies = request.getCookies();
         String cookieName = name;
-        Cookie cookie = null;
+        Cookie cookie;
         String value = null;
         if(cookies !=null) {
             for(Cookie c: cookies) {
@@ -23,8 +23,29 @@ public class CookieHelper {
         return value;
     }
 
-    public static void setCookieByName(HttpServletResponse response, String name, String value) {
-        Cookie cookie = new Cookie(name, value);
+    private static Cookie getCookie(HttpServletRequest request, String name) {
+        if (request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals(name)) {
+                    return cookie;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public static void setCookieByName(HttpServletRequest request, HttpServletResponse response, String name, String value, String path) {
+       Cookie cookie;
+        if(getCookie(request,name) ==null){
+             cookie = new Cookie(name, value);
+            cookie.setPath(path);
+        }
+        else{
+            cookie = getCookie(request,name);
+            cookie.setValue(value);
+        }
+
         response.addCookie(cookie);
     }
 

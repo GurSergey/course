@@ -4,7 +4,7 @@
 <head>
     <title>Список открытых голосований</title>
     <style>
-        <%@include file="/css/style.css"%>
+        <%@include file="/css/style1.css"%>
     </style>
 </head>
 <body>
@@ -29,13 +29,15 @@
         <p style="color: red;">Возникла ошибка обновления записей из БД. Повторите попытку позже</p>
     </c:if>
     <h1>Заголовок голосования - ${poll.title}</h1>
-    <jsp:useBean id="polls" scope="request" type="java.util.List"/>
     <c:forEach var="question" items="${poll.questions}">
-        <p>${question.title}</p>
+        <p>${question.question}</p>
         <p>Всего высказалось по этому вопросу - ${question.questionsStatistics.countAnswers} человек</p>
         <c:forEach var="variant" items="${question.variants}">
             <p>${variant.text}. количество проголосовавших ${variant.variantStatistics.countAnswers} Процент
-                    ${variant.variantStatistics.countAnswers/question.questionsStatistics.countAnswers}</p>
+                    ${variant.variantStatistics.countAnswers/question.questionsStatistics.countAnswers*100}%
+                <progress value="${variant.variantStatistics.countAnswers/question.questionsStatistics.countAnswers*100}"
+                          max="100"></progress></p>
+            <br>
         </c:forEach>
         <br>
     </c:forEach>

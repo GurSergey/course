@@ -3,6 +3,7 @@ package com.company.services;
 import com.company.enitities.VoterEntity;
 import com.company.exceptions.InsertException;
 import com.company.exceptions.SelectException;
+import com.company.exceptions.UpdateException;
 import com.company.repositories.UserRepository;
 
 import java.math.BigInteger;
@@ -36,10 +37,20 @@ public class UserService {
     }
 
     public VoterEntity getUserByLoginPassword(String login, String password) throws SelectException{
-        return repository.getUserByLoginPassword(login, password);
+        return repository.getUserByLoginPassword(login, hashedPassword(password));
+    }
+
+    public VoterEntity getVoterById(int id) throws SelectException{
+        return repository.getVoterById(id);
+    }
+
+    public void updateVoter(VoterEntity voter) throws UpdateException{
+        voter.setPassword(hashedPassword(voter.getPassword()));
+        repository.updateVoter(voter);
     }
 
     public void createUser(VoterEntity voter) throws InsertException {
+        voter.setPassword(hashedPassword(voter.getPassword()));
         repository.createUser(voter);
     }
 

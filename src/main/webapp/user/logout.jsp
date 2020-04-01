@@ -8,8 +8,10 @@
     </style>
 </head>
 <body>
+<jsp:include page="../nav.jsp" />
 <div class="panel">
     Вы вышли из системы, можете перейти на главную страницу <a href="../index.html">Главная страница</a>
 </div>
+<jsp:include page="../footer.jsp" />
 </body>
 </html>

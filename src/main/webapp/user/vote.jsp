@@ -4,7 +4,7 @@
 <head>
     <title>Проголосовать</title>
     <style>
-        <%@include file="/css/style.css"%>
+        <%@include file="/css/style1.css"%>
     </style>
 </head>
 <body>
@@ -28,24 +28,30 @@
     <c:if test="${error==EntityError.UPDATE}">
         <p style="color: red;">Возникла ошибка обновления записей из БД. Повторите попытку позже</p>
     </c:if>
-    <h1>Заголовок голосования - ${question.poll.title}</h1>
-    <h1>Вопрос ${question.question}</h1>
+    <c:if test="${question == null}">
+        <p>В этом голосовании еще нет доступных вам вопросов, на которые вы еще не ответили.
+            Пожалуйста, вернитесь к списку доступных голосований <a href=""> Список</a>  </p>
+    </c:if>
 
-    <form>
-        <p>Please select your preferred contact method:</p>
-        <div>
-            <c:forEach var="variant" items="${question.variants}">
-            <input type="radio" id="${variant.id}"
-                   name="variant" value="${variant.id}" checked>
-            <label for="${variant.id}">${variant.text}</label>
+    <c:if test="${question != null}">
+        <h1>Заголовок голосования - ${question.poll.title}</h1>
+        <h1>Вопрос ${question.question}</h1>
 
-            </c:forEach>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-    </form>
-
+        <form action="" method="post">
+            <p>Выберете один из доступных вариантов:</p>
+            <div>
+                <c:forEach var="variant" items="${question.variants}">
+                    <input type="hidden" name="">
+                <input type="radio" id="${variant.id}"
+                       name="variantId" value="${variant.id}">
+                <label for="${variant.id}">${variant.text}</label>
+                </c:forEach>
+            </div>
+            <div>
+                <button type="submit">Проголосовать!</button>
+            </div>
+        </form>
+    </c:if>
 </div>
 </body>
 </html>

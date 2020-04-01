@@ -4,7 +4,7 @@
 <head>
     <title>Список голосований</title>
     <style>
-        <%@include file="../css/style.css"%>
+        <%@include file="../css/style1.css"%>
     </style>
 </head>
     <body>

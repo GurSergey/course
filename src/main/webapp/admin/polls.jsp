@@ -4,7 +4,7 @@
 <head>
     <title>Список голосований</title>
     <style>
-        <%@include file="../css/style.css"%>
+        <%@include file="../css/style1.css"%>
     </style>
 </head>
     <body>
@@ -49,24 +49,24 @@
                 </tr>
             </thead>
             <tbody>
-                        <c:forEach var="poll" items="${polls}">
-                                 <tr>
-                                    <td>${poll.id}<input name="id" type="hidden" value="${poll.id}" form="poll_form_${poll.id}">
-                                        <input name="typeReq" type="hidden" value="update" form="poll_form_${poll.id}"></td>
-                                    <td><input name="title" type="text" value="${poll.title}" form="poll_form_${poll.id}"></td>
-                                    <td><input name="visible" type="checkbox" value="${poll.visible}" form="poll_form_${poll.id}"></td>
-                                    <td><input name="createDate" type="date" form="poll_form_${poll.id}"
-                                               value="${poll.createDate}"></td>
-                                    <td><input name="startDate" type="date" form="poll_form_${poll.id}"
-                                               value="${poll.startDate}"></td>
-                                    <td><input name="dateTo" type="date" form="poll_form_${poll.id}"
-                                           value="${poll.dateTo}"></td>
-                                    <td><input type="submit" name="update" value="Сохранить" form="poll_form_${poll.id}"></td>
-                                    <td><input type="submit" name="delete" value="Удалить" form="poll_form_${poll.id}"></td>
-                                    <td><a href="../../admin/questions/?pollId=${poll.id}">
-                                        <button>Перейти к редактированию вопросов</button></a></td>
-                            </tr>
-                        </c:forEach>
+                <c:forEach var="poll" items="${polls}">
+                         <tr>
+                            <td>${poll.id}<input name="id" type="hidden" value="${poll.id}" form="poll_form_${poll.id}">
+                                <input name="typeReq" type="hidden" value="update" form="poll_form_${poll.id}"></td>
+                            <td><input name="title" type="text" value="${poll.title}" form="poll_form_${poll.id}"></td>
+                            <td><input name="visible" type="checkbox" value="${poll.visible}" form="poll_form_${poll.id}"></td>
+                            <td><input name="createDate" type="date" form="poll_form_${poll.id}"
+                                       value="${poll.createDate}"></td>
+                            <td><input name="startDate" type="date" form="poll_form_${poll.id}"
+                                       value="${poll.startDate}"></td>
+                            <td><input name="dateTo" type="date" form="poll_form_${poll.id}"
+                                   value="${poll.dateTo}"></td>
+                            <td><input type="submit" name="update" value="Сохранить" form="poll_form_${poll.id}"></td>
+                            <td><input type="submit" name="delete" value="Удалить" form="poll_form_${poll.id}"></td>
+                            <td><a href="../questions/?pollId=${poll.id}">
+                                <button>Перейти к редактированию вопросов</button></a></td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
         </div>

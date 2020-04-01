@@ -44,10 +44,10 @@ public class AdminAuthServlet extends HttpServlet {
         String login = request.getParameter("login");
         if(password.equals(PASS_ADMIN) && login.equals(LOGIN_ADMIN)){
             String sessionId = generateSessionId();
-            CookieHelper.setCookieByName(response, "adminSession", sessionId);
+            CookieHelper.setCookieByName( request, response,  "adminSession", sessionId, request.getContextPath() + "/admin");
             AdminSessionStorage.setSession(sessionId);
         }
         ServletContext context = getServletContext();
-        context.getRequestDispatcher("/admin/menu.jsp").forward(request, response);
+        context.getRequestDispatcher("/admin/auth.jsp").forward(request, response);
     }
 }

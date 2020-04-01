@@ -31,4 +31,8 @@ public class QuestionsService {
     public void deleteQuestion(QuestionEntity question) throws DeleteException {
         this.repository.deleteQuestion(question);
     }
+
+    public QuestionEntity getQuestionForUser(int pollId, int userId) throws SelectException{
+        return this.repository.getQuestionForUser(pollId, userId);
+    }
 }

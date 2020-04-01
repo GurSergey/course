@@ -10,7 +10,7 @@
 <head>
     <title>Вход в систему</title>
     <style>
-        <%@include file="./css/style.css"%>
+        <%@include file="css/style1.css"%>
     </style>
 </head>
 <body>

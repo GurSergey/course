@@ -11,4 +11,5 @@ public interface QuestionsRepository {
     void saveQuestion(QuestionEntity question) throws InsertException;
     void updateQuestion(QuestionEntity question) throws UpdateException;
     void deleteQuestion(QuestionEntity question) throws DeleteException;
+    QuestionEntity getQuestionForUser(int pollId, int userId) throws SelectException;
 }

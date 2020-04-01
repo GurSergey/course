@@ -10,16 +10,19 @@ import com.company.repositories.QuestionsRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class PollsRepositoryDB implements PollsRepository {
+
     public PollsRepositoryDB()  {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -177,6 +180,7 @@ public class PollsRepositoryDB implements PollsRepository {
                     "SELECT title FROM poll WHERE id = ?  ");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
             pollEntity.setTitle(resultSet.getString(1));
             preparedStatement.close();
 
@@ -199,14 +203,15 @@ public class PollsRepositoryDB implements PollsRepository {
                 questionEntityHashMap.put(questionEntity.getId(), questionEntity);
             }
             preparedStatement.close();
-//            questionEntityHashMap.keySet().
-            preparedStatement = connection.prepareStatement(
+            String in = Arrays.toString(questionEntityHashMap.keySet().toArray()).
+                    replaceAll("[\\[\\]]", "");
+            Statement statement = connection.createStatement();
+            resultSet = statement.executeQuery(
                     "SELECT variants.id, variants.text, variants.question_id, " +
                     "COUNT(answer.id) AS count_answers_variant " +
                     "FROM variants LEFT JOIN answer ON " +
-                    "variants.id = answer.variant_id WHERE question_id IN (?) GROUP BY variants.id");
-            Array array = connection.createArrayOf("INTEGER", questionEntityHashMap.keySet().toArray());
-            preparedStatement.setArray(1, array);
+                    "variants.id = answer.variant_id WHERE question_id IN ("+in+") GROUP BY variants.id");
+
             while (resultSet.next()) {
                 VariantEntity variantEntity = new VariantEntity();
                 variantEntity.setId(resultSet.getInt(1));
@@ -232,6 +237,7 @@ public class PollsRepositoryDB implements PollsRepository {
                     "SELECT title FROM poll WHERE id = ?  ");
             preparedStatement.setInt(1, pollId);
             ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
             pollEntity.setTitle(resultSet.getString(1));
             preparedStatement.close();
 
@@ -245,6 +251,7 @@ public class PollsRepositoryDB implements PollsRepository {
                     "WHERE poll_id = ? AND  answer.voter_id = ? ");
             preparedStatement.setInt(1, pollId);
             preparedStatement.setInt(2, userId);
+            resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 QuestionEntity questionEntity = new QuestionEntity();
                 questionEntity.setId(resultSet.getInt(1));
@@ -259,6 +266,8 @@ public class PollsRepositoryDB implements PollsRepository {
 
                 questionEntity.getVariants().add(variantEntity);
                 variantEntity.setAnswer(answerEntity);
+
+                pollEntity.getQuestions().add(questionEntity);
             }
 
         } catch (SQLException e){
@@ -270,15 +279,14 @@ public class PollsRepositoryDB implements PollsRepository {
     public PollEntity[] getPollsByUser(int userId) throws SelectException {
         ArrayList<PollEntity> polls = new ArrayList<>();
         try (Connection connection = DBConnection.getConnection()) {
-
             PreparedStatement preparedStatement = connection.prepareStatement(
-                    "SELECT poll.id, poll.title, poll.visible, poll.date_to, " +
+                    "SELECT DISTINCT poll.id, poll.title, poll.visible, poll.date_to, " +
                             "poll.start_date, poll.create_date  " +
                             "FROM poll JOIN question ON " +
                             "question.poll_id = poll.id JOIN variants ON " +
                             "question.id = variants.question_id " +
                             "JOIN answer ON " +
-                            "variants.id = answer.variant_id " +
+                            "variants.id = answer.variant_id WHERE " +
                             "answer.voter_id = ? ");
             preparedStatement.setInt(1, userId);
             ResultSet resultSet = preparedStatement.executeQuery();

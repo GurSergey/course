@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class UserAuthServlet extends HttpServlet {
@@ -22,12 +23,29 @@ public class UserAuthServlet extends HttpServlet {
         super();
     }
 
+    private static final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
+    private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
+    private static final String NUMBER = "0123456789";
+    private static final String DATA_FOR_RANDOM_STRING = CHAR_LOWER + CHAR_UPPER + NUMBER;
+
     private static final int SIZE_SESSION_ID = 100;
 
-    private String generateSessionId() {
-        byte[] array = new byte[SIZE_SESSION_ID]; // length is bounded by 7
-        new Random().nextBytes(array);
-        return new String(array, StandardCharsets.UTF_8);
+    private static String generateSessionId() {
+        if (SIZE_SESSION_ID < 1) throw new IllegalArgumentException();
+
+        StringBuilder sb = new StringBuilder(SIZE_SESSION_ID);
+        SecureRandom random = new SecureRandom();
+        for (int i = 0; i < SIZE_SESSION_ID; i++) {
+
+            int rndCharAt = random.nextInt(DATA_FOR_RANDOM_STRING.length());
+            char rndChar = DATA_FOR_RANDOM_STRING.charAt(rndCharAt);
+            System.out.format("%d\t:\t%c%n", rndCharAt, rndChar);
+            sb.append(rndChar);
+
+        }
+
+        return sb.toString();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -51,12 +69,16 @@ public class UserAuthServlet extends HttpServlet {
             VoterEntity voter = service.getUserByLoginPassword(login, password);
             if(voter != null){
                 String sessionId = generateSessionId();
-                CookieHelper.setCookieByName(response, "userSession", sessionId);
+                CookieHelper.setCookieByName(request, response, "userSession", sessionId, request.getContextPath() + "/user");
                 UserSessionStorage.setSession(sessionId, voter.getId());
+                context.setAttribute("authPassed", true);
+            } else {
+                context.setAttribute("authPassed", false);
             }
         } catch (SelectException e) {
             e.printStackTrace();
         }
-        context.getRequestDispatcher("/user/menu.jsp").forward(request, response);
+
+        context.getRequestDispatcher("/user/auth.jsp").forward(request, response);
     }
 }

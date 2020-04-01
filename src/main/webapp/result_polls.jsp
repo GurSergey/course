@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Список открытых голосований</title>
+    <title>Завершенных голосований</title>
     <style>
         <%@include file="/css/style1.css"%>
     </style>
@@ -36,12 +36,11 @@
             <th>Дата завершения голосования </th>
             <th>Список проголосовавших</th>
             <th>Принято мнений в рамках голосования</th>
-            <th>Перейти к подробной информации о голосовании</th>
+            <th>Перейти к заключительным результатам</th>
         </tr>
         </thead>
         <tbody>
-
-        <c:forEach var="poll" items="${polls}">
+                <c:forEach var="poll" items="${polls}">
             <tr>
                 <td>${poll.title}</td>
                 <td>${poll.startDate}</td>

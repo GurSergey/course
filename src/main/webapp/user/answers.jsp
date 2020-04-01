@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Список ответов голосований</title>
+    <title>Список ответов голосования</title>
     <style>
         <%@include file="/css/style.css"%>
     </style>
@@ -28,13 +28,35 @@
     <c:if test="${error==EntityError.UPDATE}">
         <p style="color: red;">Возникла ошибка обновления записей из БД. Повторите попытку позже</p>
     </c:if>
-    <h1>Заголовок голосования - ${poll.title}</h1>
-    <jsp:useBean id="polls" scope="request" type="java.util.List"/>
-    <c:forEach var="question" items="${poll.questions}">
-        <p>Вопрос ${question.question}</p>
-        <p>Ваш ответ ${question.viriants.get(0).text}</p>
-        <br>
-    </c:forEach>
+<%--    <h1>Голосование - ${poll.title}</h1>--%>
+<%--    <c:forEach var="question" items="${poll.questions}">--%>
+<%--        <p>Вопрос ${question.question}</p>--%>
+<%--        <p>Ваш ответ ${question.variants.get(0).text}</p>--%>
+<%--        <br>--%>
+<%--    </c:forEach>--%>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content black-text">
+                        <span class="card-title">Голосование - "${poll.title}"</span>
+                            <ul class="collection">
+                                <c:forEach var="question" items="${poll.questions}">
+                                    <li class="collection-item avatar">
+
+                                        <span class="title">Вопрос: ${question.question}</span>
+                                        <p>Ваш ответ: <br>
+                                            ${question.variants.get(0).text}
+                                        </p>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                    </div>
+                    <div class="card-action">
+                        <a href="../user/polls/">Вернуться к списку моих голосований</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 </body>
 </html>

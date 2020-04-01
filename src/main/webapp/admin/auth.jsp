@@ -4,7 +4,7 @@
 <head>
     <title>Авторизация администратора</title>
     <style>
-        <%@include file="../css/style.css"%>
+        <%@include file="../css/style1.css"%>
     </style>
 </head>
 <body>

@@ -18,11 +18,12 @@ public class UserSessionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String session = CookieHelper.getCookieByName((HttpServletRequest) servletRequest, "userSession");
-        if(UserSessionStorage.getIdUser(session)!=null) {
+        if(session!= null && UserSessionStorage.getIdUser(session)!=null) {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
             HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
-            httpResponse.sendRedirect("/user/auth.jsp");
+            CookieHelper.deleteCookie(httpResponse, "userSession");
+            httpResponse.sendRedirect(((HttpServletRequest) servletRequest).getContextPath() + "/user_auth/");
         }
     }
 

@@ -2,12 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Список открытых голосований</title>
+    <title>Редактирование профиля</title>
     <style>
-        <%@include file="/css/style1.css"%>
+        <%@include file="../css/style.css"%>
     </style>
 </head>
 <body>
+<jsp:include page="../user_nav.jsp" />
 <div class="panel">
     <%@ page import="com.company.enums.EntityError" %>
     <c:if test="${error==EntityError.NO_ERROR_UPDATE}">
@@ -28,32 +29,27 @@
     <c:if test="${error==EntityError.UPDATE}">
         <p style="color: red;">Возникла ошибка обновления записей из БД. Повторите попытку позже</p>
     </c:if>
-    <table>
-        <thead>
-        <tr>
-            <th>Название</th>
-            <th>Дата начала голосования</th>
-            <th>Дата завершения голосования </th>
-            <th>Список проголосовавших</th>
-            <th>Принято мнений в рамках голосования</th>
-            <th>Перейти к подробной информации о голосовании</th>
-        </tr>
-        </thead>
-        <tbody>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content black-text">
+                        <span class="card-title">Вход в систему</span>
+                        <form action="" method="post">
+                            <p>Редактирование профиля</p>
+                            <p>Имя: <input name="name" type="text" value="${voter.name}"></p>
+                            <p>Пароль:<input name="password" type="password" value=""> </p>
+                            <p>Повторите пароль:<input name="passwordRepeat" type="password" value=""></p>
+                            <p>Телефон: <input name="phone" type="text" value="${voter.phone}"></p>
+                            <p><input type="submit"></p>
+                        </form>
+                    </div>
+                    <div class="card-action">
+                        <p>Вернитесь в главное меню <a href="../user_auth">Вход</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <c:forEach var="poll" items="${polls}">
-            <tr>
-                <td>${poll.title}</td>
-                <td>${poll.startDate}</td>
-                <td>${poll.dateTo}</td>
-                <td>${poll.statistics.countVoter}</td>
-                <td>${poll.statistics.countOpinions}</td>
-                <td><a href="../../poll/result?pollId=${poll.id}">Подробно</a></td>
-            </tr>
-            </c:forEach>
-
-        </tbody>
-    </table>
 </div>
 </body>
 </html>

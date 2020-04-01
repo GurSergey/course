@@ -2,6 +2,7 @@
 /home/serge/IdeaProjects/course/src/main/java/com/company/enitities/VoterEntity.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/enitities/QuestionEntity.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/db/DBConnection.java
+/home/serge/IdeaProjects/course/src/main/java/com/company/servlet/UserEditProfileServlet.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/repositories/UserRepository.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/filters/AdminSessionFilter.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/enitities/QuestionStatisticsEntity.java
@@ -25,6 +26,7 @@
 /home/serge/IdeaProjects/course/src/main/java/com/company/exceptions/InsertException.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/enitities/PollEntity.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/PollResultServlet.java
+/home/serge/IdeaProjects/course/src/main/java/com/company/db/AnswerRepositoryDB.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/UserPollsServlet.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/AdminAuthServlet.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/VoteServlet.java
@@ -32,6 +34,7 @@
 /home/serge/IdeaProjects/course/src/main/java/com/company/services/PollsService.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/enums/Roles.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/db/UserRepositoryDB.java
+/home/serge/IdeaProjects/course/src/main/java/com/company/repositories/AnswerRepository.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/AdminMenuServlet.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/enitities/VariantEntity.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/AdminLogoutServlet.java
@@ -44,6 +47,7 @@
 /home/serge/IdeaProjects/course/src/main/java/com/company/enitities/PollStatisticsEntity.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/UserAnswersServlet.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/services/UserService.java
+/home/serge/IdeaProjects/course/src/main/java/com/company/services/AnswerService.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/db/QuestionsRepositoryDB.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/services/VariantsService.java
 /home/serge/IdeaProjects/course/src/main/java/com/company/servlet/QuestionsEditServlet.java

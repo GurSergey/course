@@ -12,6 +12,15 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class VariantsRepositoryDB implements VariantsRepository {
+
+    public VariantsRepositoryDB()  {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public VariantEntity[] getAllVariantsByQuestionId(int questionId) throws SelectException {
         ArrayList<VariantEntity> variants = new ArrayList<>();

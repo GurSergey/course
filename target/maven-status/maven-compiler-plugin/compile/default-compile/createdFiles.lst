@@ -12,6 +12,8 @@ com/company/services/UserService.class
 com/company/enitities/VariantEntity.class
 com/company/enitities/QuestionStatisticsEntity.class
 com/company/repositories/QuestionsRepository.class
+com/company/services/AnswerService.class
+com/company/repositories/AnswerRepository.class
 com/company/enitities/VariantStatisticsEntity.class
 com/company/servlet/OpenPollsUserServlet.class
 com/company/enums/Roles.class
@@ -35,6 +37,7 @@ com/company/services/PollsService.class
 com/company/enitities/QuestionEntity.class
 com/company/filters/AdminSessionFilter.class
 com/company/servlet/UserMenuServlet.class
+com/company/db/AnswerRepositoryDB.class
 com/company/servlet/QuestionsEditServlet.class
 com/company/servlet/VoteServlet.class
 com/company/enitities/AnswerEntity.class
@@ -42,6 +45,7 @@ com/company/enums/EntityError.class
 com/company/filters/UserSessionFilter.class
 com/company/servlet/UserAnswersServlet.class
 com/company/servlet/PollsEditServlet.class
+com/company/servlet/UserEditProfileServlet.class
 com/company/servlet/UserLogoutServlet.class
 com/company/servlet/UserRegistrationServlet.class
 com/company/helpers/CookieHelper.class

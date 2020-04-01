@@ -4,18 +4,21 @@ import java.util.HashMap;
 
 public class UserSessionStorage {
 
-        private static final ThreadLocal<HashMap<String, Integer>> userSession =
-                new ThreadLocal<HashMap<String, Integer>>();
+        private static final HashMap<String, Integer> userSession =
+                new HashMap<String, Integer>();
+
         public static void setSession(String sessionId, int id) {
-            userSession.get().put(sessionId, id);
+            //HashMap<String, Integer> test = userSession.get();
+            userSession.put(sessionId, id);
         }
 
         public static Integer getIdUser(String sessionId) {
-            return userSession.get().get(sessionId);
+//            HashMap<String, Integer> test = userSession.get();
+            return userSession.get(sessionId);
         }
 
         public static void deleteSession(String sessionId) {
-            userSession.get().remove(sessionId);
+            userSession.remove(sessionId);
         }
 
 }

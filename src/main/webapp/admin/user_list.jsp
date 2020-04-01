@@ -4,7 +4,7 @@
 <head>
     <title>Список пользователей в системе</title>
     <style>
-        <%@include file="../css/style.css"%>
+        <%@include file="../css/style1.css"%>
     </style>
 </head>
     <body>
@@ -48,7 +48,7 @@
                                     <td>${user.id}</td>
                                     <td>${user.name}</td>
                                     <td>${user.login}</td>
-                                    <td>${user.createDate}</td>
+                                    <td>${user.registrationDate}</td>
                                     <td>${user.password}</td>
                                     <td>${user.phone}</td>
                             </tr>

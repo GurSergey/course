@@ -17,7 +17,7 @@ public class AdminSessionFilter implements Filter{
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String session = CookieHelper.getCookieByName((HttpServletRequest) servletRequest, "adminSession");
-        if(AdminSessionStorage.sessionIsActive(session)) {
+        if(session!=null && AdminSessionStorage.sessionIsActive(session)) {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
             HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;

@@ -5,18 +5,25 @@
          version="3.0">
 
     <filter>
-        <filter-name>logFilter</filter-name>
+        <filter-name>UTF8Filter</filter-name>
         <filter-class>com.company.filters.UTF8Filter</filter-class>
     </filter>
 
-    <!--
-      Declare the path (of the page) will have the effect of logFilter
-     /* for all paths
-    -->
     <filter-mapping>
-        <filter-name>logFilter</filter-name>
+        <filter-name>UTF8Filter</filter-name>
         <url-pattern>*</url-pattern>
     </filter-mapping>
+
+    <filter>
+        <filter-name>UserSessionFilter</filter-name>
+        <filter-class>com.company.filters.UserSessionFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>UserSessionFilter</filter-name>
+        <url-pattern>/user/*</url-pattern>
+    </filter-mapping>
+
 
     <servlet>
         <servlet-name>pollEditServlet</servlet-name>
@@ -24,7 +31,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>pollEditServlet</servlet-name>
-        <url-pattern>/admin/polls/*</url-pattern>
+        <url-pattern>/admin/polls/edit/*</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -100,12 +107,30 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>openPollsUserServlet</servlet-name>
+        <servlet-class>com.company.servlet.OpenPollsUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>openPollsUserServlet</servlet-name>
+        <url-pattern>/user/open/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>userEditProfileServlet</servlet-name>
+        <servlet-class>com.company.servlet.UserEditProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userEditProfileServlet</servlet-name>
+        <url-pattern>/user/edit_profile/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>userAuthServlet</servlet-name>
         <servlet-class>com.company.servlet.UserAuthServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>userAuthServlet</servlet-name>
-        <url-pattern>/user/auth/*</url-pattern>
+        <url-pattern>/user_auth/*</url-pattern>
     </servlet-mapping>
 
 
@@ -144,7 +169,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>userRegistrationServlet</servlet-name>
-        <url-pattern>/user/registration/*</url-pattern>
+        <url-pattern>/user_registration/*</url-pattern>
     </servlet-mapping>
 
     <servlet>

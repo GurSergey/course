@@ -13,6 +13,16 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class QuestionsRepositoryDB implements QuestionsRepository {
+
+    public QuestionsRepositoryDB()  {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     @Override
     public QuestionEntity[] getAllQuestionsByPollId(int pollId) throws SelectException {
         ArrayList<QuestionEntity> questions = new ArrayList<>();
@@ -87,9 +97,9 @@ public class QuestionsRepositoryDB implements QuestionsRepository {
          try (Connection connection = DBConnection.getConnection()){
              PreparedStatement preparedStatement = connection.prepareStatement(
             "SELECT DISTINCT poll.id, poll.title, question.question, question.id FROM poll " +
-             "JOIN question ON poll.id=question.poll_id " +
-             "JOIN variants ON " +
-             "question.id = variants.question_id JOIN answer " +
+             "LEFT JOIN question ON poll.id=question.poll_id " +
+             "LEFT JOIN variants ON " +
+             "question.id = variants.question_id LEFT JOIN answer " +
              "ON answer.variant_id = variants.id WHERE poll.id=? AND question.id NOT IN " +
              "(SELECT question.id FROM question JOIN variants ON variants.question_id = question.id " +
              "JOIN answer ON variants.id=answer.variant_id  WHERE answer.voter_id=?) LIMIT 1");
@@ -107,7 +117,7 @@ public class QuestionsRepositoryDB implements QuestionsRepository {
                  ArrayList<VariantEntity> variants = new ArrayList<>();
 
                  preparedStatement = connection.prepareStatement(
-                         "SELECT id, question_id, text, " +
+                         "SELECT id, question_id, text " +
                                  "FROM variants WHERE question_id = ? "
                  );
                  preparedStatement.setInt(1, question.getId());
@@ -119,7 +129,7 @@ public class QuestionsRepositoryDB implements QuestionsRepository {
                  question.setVariants(variants);
                  preparedStatement.close();
                  resultSet.close();
-
+                return  question;
              }
          } catch (SQLException e) {
              throw new SelectException();

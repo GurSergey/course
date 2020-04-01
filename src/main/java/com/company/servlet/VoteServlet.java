@@ -1,9 +1,17 @@
 package com.company.servlet;
 
+import com.company.db.AnswerRepositoryDB;
+import com.company.db.QuestionsRepositoryDB;
 import com.company.db.VariantsRepositoryDB;
+import com.company.enitities.AnswerEntity;
 import com.company.enums.EntityError;
+import com.company.exceptions.InsertException;
 import com.company.exceptions.SelectException;
+import com.company.helpers.CookieHelper;
+import com.company.services.AnswerService;
+import com.company.services.QuestionsService;
 import com.company.services.VariantsService;
+import com.company.session.UserSessionStorage;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -11,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Date;
 
 public class VoteServlet extends HttpServlet {
 
@@ -20,10 +29,10 @@ public class VoteServlet extends HttpServlet {
 
     private int getPollId(HttpServletRequest request){
         int questionId;
-        if(!request.getParameterMap().containsKey("questionId")) {
+        if(!request.getParameterMap().containsKey("pollId")) {
             questionId = NOT_FOUND_ID;
         } else {
-            questionId = Integer.parseInt(request.getParameter("questionId"));
+            questionId = Integer.parseInt(request.getParameter("pollId"));
         }
         return questionId;
     }
@@ -31,23 +40,36 @@ public class VoteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ServletContext context = this.getServletContext();
-        int questionId = getPollId(request);
-        if(questionId == NOT_FOUND_ID) {
+        int pollId = getPollId(request);
+        if(pollId == NOT_FOUND_ID) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
         try {
-            VariantsService service = new VariantsService(new VariantsRepositoryDB());
-            context.setAttribute("variants", service.getVariantsByIdQuestion(questionId));
+            QuestionsService service = new QuestionsService(new QuestionsRepositoryDB());
+            String session = CookieHelper.getCookieByName(request,"userSession");
+            context.setAttribute("question", service.getQuestionForUser(pollId, UserSessionStorage.getIdUser(session)));
         } catch (SelectException e) {
             context.setAttribute("error", EntityError.SELECT);
         }
-        getServletContext().getRequestDispatcher("/user/variants.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/user/vote.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        ServletContext context = this.getServletContext();
+        try {
+            AnswerService service = new AnswerService(new AnswerRepositoryDB());
+            AnswerEntity answer = new AnswerEntity();
+            answer.setAnswerDate((new Date((new java.util.Date()).getTime())));
+            String session = CookieHelper.getCookieByName(request,"userSession");
+            answer.setVoterId(UserSessionStorage.getIdUser(session));
+            answer.setVariantId(Integer.parseInt(request.getParameter("variantId")));
 
-        getServletContext().getRequestDispatcher("/user/variants.jsp").forward(request, response);
+            service.saveAnswer(answer);
+        } catch (InsertException e) {
+            context.setAttribute("error", EntityError.INSERT);
+        }
+        this.doGet(request, response);
     }
 
 }

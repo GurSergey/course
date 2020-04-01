@@ -4,7 +4,7 @@
 <head>
     <title>Список открытых голосований</title>
     <style>
-        <%@include file="/css/style.css"%>
+        <%@include file="/css/style1.css"%>
     </style>
 </head>
 <body>
@@ -41,16 +41,15 @@
         </tr>
         </thead>
         <tbody>
-        <jsp:useBean id="polls" scope="request" type="java.util.List"/>
         <c:forEach var="poll" items="${polls}">
             <tr>
                 <td>${poll.title}></td>
                 <td>${poll.startDate}</td>
                 <td>${poll.dateTo}</td>
-                <td>${poll.statistics.getCountVoter}</td>
-                <td>${poll.statistics.getCountOpinions}</td>
-                <td><a href="">Голосовать!</a></td>
-                <td><a href="">Подробно</a></td>
+                <td>${poll.statistics.countVoter}</td>
+                <td>${poll.statistics.countOpinions}</td>
+                <td><a href="../vote?pollId=${poll.id}">Голосовать!</a></td>
+                <td><a href="../../poll/result?pollId=${poll.id}">Подробно</a></td>
             </tr>
         </c:forEach>
 

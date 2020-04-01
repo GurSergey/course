@@ -30,12 +30,13 @@ public class UserRegistrationServlet extends HttpServlet {
         VoterEntity voter = new VoterEntity();
         voter.setLogin(request.getParameter("login"));
         voter.setName(request.getParameter("name"));
-        voter.setPassword(UserService.hashedPassword(request.getParameter("password")));
+        voter.setPassword(request.getParameter("password"));
         voter.setPhone(request.getParameter("phone"));
         voter.setRegistrationDate(new Date((new java.util.Date()).getTime()));
         try {
             service.createUser(voter);
-            context.getRequestDispatcher("/user/auth.jsp").forward(request, response);
+            response.sendRedirect(request.getContextPath()+"/user_auth");
+//            context.getRequestDispatcher("/user_auth.jsp").forward(request, response);
         } catch (InsertException e) {
             context.setAttribute("error", EntityError.INSERT);
             context.getRequestDispatcher("/user/registration.jsp").forward(request, response);
