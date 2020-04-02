@@ -43,7 +43,7 @@ public class PollsEditServlet extends HttpServlet {
         pollEntity.setId(request.getParameterMap().containsKey("id")?Integer.parseInt(request.getParameter("id"))
                 : -1);
         pollEntity.setTitle( request.getParameter("title"));
-        pollEntity.setVisible( Boolean.getBoolean(request.getParameter("visible")));
+        pollEntity.setVisible(request.getParameter("visible") != null);
         pollEntity.setCreateDate(new Date((new java.util.Date()).getTime()));
         pollEntity.setStartDate(Date.valueOf(request.getParameter("startDate")));
         pollEntity.setDateTo(Date.valueOf(request.getParameter("dateTo")));

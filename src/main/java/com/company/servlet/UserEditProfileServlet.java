@@ -25,7 +25,7 @@ public class UserEditProfileServlet extends HttpServlet {
         UserService service = new UserService(new UserRepositoryDB());
         try {
             String session = CookieHelper.getCookieByName(request,"userSession");
-            VoterEntity voter = service.getVoterById(UserSessionStorage.getIdUser(session));
+            VoterEntity voter = service.getVoterById(UserSessionStorage.getUser(session).getId());
             context.setAttribute("voter", voter);
             context.setAttribute("error", EntityError.NO_ERROR_UPDATE);
         } catch ( SelectException e) {

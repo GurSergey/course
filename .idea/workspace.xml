@@ -7,37 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77ab5f19-9232-4468-8ee4-2bb7e7c1ad53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/db/AnswerRepositoryDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/repositories/AnswerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/services/AnswerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserEditProfileServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nav.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/result_polls.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/user/edit_profile.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/user_nav.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin_nav.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/1.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/db/QuestionsRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/db/QuestionsRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/db/UserRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/db/UserRepositoryDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/db/VariantsRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/db/VariantsRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/filters/AdminSessionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/filters/AdminSessionFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/filters/UserSessionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/filters/UserSessionFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/helpers/CookieHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/helpers/CookieHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repositories/QuestionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repositories/QuestionsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/services/QuestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/services/QuestionsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminAuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminAuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsResultServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAnswersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAnswersServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserRegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserRegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserEditProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserEditProfileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserLogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserLogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserPollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserPollsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/VoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/VoteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/session/AdminSessionStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/session/AdminSessionStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/session/UserSessionStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/session/UserSessionStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/auth.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/logout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/menu.jsp" afterDir="false" />
@@ -45,21 +30,22 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/questions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/questions.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/user_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/user_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/variants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/variants.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/absolute_path.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/nav.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/open_polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/open_polls.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/result_poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/result_poll.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/result_polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/result_polls.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/answers.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/answers.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/auth.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/edit_profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/edit_profile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/logout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/my_polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/my_polls.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/open_polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/open_polls.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/registration.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user/vote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/vote.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,22 +97,22 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/css" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/user" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/admin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company.repositories" />
+      <recent name="com.company.session" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/css" />
       <recent name="$PROJECT_DIR$/src/main/webapp/admin" />
       <recent name="$PROJECT_DIR$/WebContent/views" />
       <recent name="$PROJECT_DIR$/WebContent" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.company.repositories" />
-      <recent name="com.company.session" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/css" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/user" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -257,7 +243,8 @@
       <workItem from="1585369368267" duration="22879000" />
       <workItem from="1585562870551" duration="30000" />
       <workItem from="1585636262734" duration="29857000" />
-      <workItem from="1585720496557" duration="31075000" />
+      <workItem from="1585720496557" duration="36972000" />
+      <workItem from="1585805454478" duration="17691000" />
     </task>
     <servers />
   </component>
@@ -326,7 +313,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java</url>
-          <line>47</line>
+          <line>48</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -366,7 +353,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java</url>
-          <line>208</line>
+          <line>209</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -391,12 +378,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/session/UserSessionStorage.java</url>
-          <line>16</line>
+          <line>19</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/session/UserSessionStorage.java</url>
-          <line>11</line>
+          <line>14</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -426,7 +413,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java</url>
-          <line>279</line>
+          <line>281</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -436,7 +423,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java</url>
-          <line>232</line>
+          <line>234</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -463,6 +450,36 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/company/db/UserRepositoryDB.java</url>
           <line>76</line>
           <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/db/QuestionsRepositoryDB.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/db/VariantsRepositoryDB.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/db/VariantsRepositoryDB.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

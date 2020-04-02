@@ -203,24 +203,26 @@ public class PollsRepositoryDB implements PollsRepository {
                 questionEntityHashMap.put(questionEntity.getId(), questionEntity);
             }
             preparedStatement.close();
-            String in = Arrays.toString(questionEntityHashMap.keySet().toArray()).
-                    replaceAll("[\\[\\]]", "");
-            Statement statement = connection.createStatement();
-            resultSet = statement.executeQuery(
-                    "SELECT variants.id, variants.text, variants.question_id, " +
-                    "COUNT(answer.id) AS count_answers_variant " +
-                    "FROM variants LEFT JOIN answer ON " +
-                    "variants.id = answer.variant_id WHERE question_id IN ("+in+") GROUP BY variants.id");
+            if(questionEntityHashMap.keySet().size()!=0) {
+                String in = Arrays.toString(questionEntityHashMap.keySet().toArray()).
+                        replaceAll("[\\[\\]]", "");
+                Statement statement = connection.createStatement();
+                resultSet = statement.executeQuery(
+                        "SELECT variants.id, variants.text, variants.question_id, " +
+                        "COUNT(answer.id) AS count_answers_variant " +
+                        "FROM variants LEFT JOIN answer ON " +
+                        "variants.id = answer.variant_id WHERE question_id IN ("+in+") GROUP BY variants.id");
 
-            while (resultSet.next()) {
-                VariantEntity variantEntity = new VariantEntity();
-                variantEntity.setId(resultSet.getInt(1));
-                variantEntity.setText(resultSet.getString(2));
-                variantEntity.setQuestionId(resultSet.getInt(3));
-                variantEntity.setVariantStatistics(new VariantStatisticsEntity(resultSet.getInt(4)));
-                questionEntityHashMap.get(variantEntity.getQuestionId()).getVariants().add(variantEntity);
+                while (resultSet.next()) {
+                    VariantEntity variantEntity = new VariantEntity();
+                    variantEntity.setId(resultSet.getInt(1));
+                    variantEntity.setText(resultSet.getString(2));
+                    variantEntity.setQuestionId(resultSet.getInt(3));
+                    variantEntity.setVariantStatistics(new VariantStatisticsEntity(resultSet.getInt(4)));
+                    questionEntityHashMap.get(variantEntity.getQuestionId()).getVariants().add(variantEntity);
             }
             preparedStatement.close();
+            }
             pollEntity.setQuestions(new ArrayList<QuestionEntity>(questionEntityHashMap.values()));
 
         } catch (SQLException e) {

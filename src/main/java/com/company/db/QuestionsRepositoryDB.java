@@ -53,7 +53,7 @@ public class QuestionsRepositoryDB implements QuestionsRepository {
         try (Connection connection = DBConnection.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO question(poll_id, " +
                     "question, " +
-                    "create_date) " +
+                    "created_date) " +
                    " VALUES (?, ?, ?)");
             preparedStatement.setInt(1, question.getPollId());
             preparedStatement.setString(2, question.getQuestion());
@@ -69,7 +69,7 @@ public class QuestionsRepositoryDB implements QuestionsRepository {
     public void updateQuestion(QuestionEntity question) throws UpdateException {
         try (Connection connection = DBConnection.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE question SET question=?, " +
-                    "create_date = ?, " +
+                    "created_date = ? " +
                     "WHERE id = ? ");
             preparedStatement.setString(1, question.getQuestion());
             preparedStatement.setDate(2, question.getCreatedDate());

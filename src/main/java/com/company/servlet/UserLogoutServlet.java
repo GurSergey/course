@@ -15,7 +15,7 @@ public class UserLogoutServlet extends HttpServlet {
             throws ServletException, IOException {
         ServletContext context = getServletContext();
         String session = CookieHelper.getCookieByName(request,"userSession");
-        if(session!= null && UserSessionStorage.getIdUser(session) != null)
+        if(session!= null && UserSessionStorage.getUser(session) != null)
             UserSessionStorage.deleteSession(session);
         context.getRequestDispatcher("/user/logout.jsp").forward(request, response);
     }

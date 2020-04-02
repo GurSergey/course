@@ -44,6 +44,7 @@ public class VariantsEditServlet extends HttpServlet {
         try {
             VariantsService service = new VariantsService(new VariantsRepositoryDB());
             context.setAttribute("variants", service.getVariantsByIdQuestion(questionId));
+            context.setAttribute("pollId", request.getParameter("pollId"));
         } catch (SelectException e) {
             context.setAttribute("error", EntityError.SELECT);
         }
@@ -62,7 +63,7 @@ public class VariantsEditServlet extends HttpServlet {
         variantEntity.setId(request.getParameterMap().containsKey("id") ? Integer.parseInt(request.getParameter("id"))
                 : -1);
         variantEntity.setQuestionId( Integer.parseInt(request.getParameter("questionId")));
-        variantEntity.setText(request.getParameter("pollId"));
+        variantEntity.setText(request.getParameter("text"));
 
         ServletContext context = this.getServletContext();
         try {
@@ -80,7 +81,8 @@ public class VariantsEditServlet extends HttpServlet {
                 service.deleteVariant(variantEntity);
                 context.setAttribute("error", EntityError.NO_ERROR_DELETE);
             }
-            context.setAttribute("polls", service.getVariantsByIdQuestion(questionId));
+            context.setAttribute("variants", service.getVariantsByIdQuestion(questionId));
+            context.setAttribute("pollId", request.getParameter("pollId"));
         } catch (SelectException e){
             context.setAttribute("error", EntityError.SELECT);
         } catch (InsertException e){

@@ -48,7 +48,7 @@ public class VoteServlet extends HttpServlet {
         try {
             QuestionsService service = new QuestionsService(new QuestionsRepositoryDB());
             String session = CookieHelper.getCookieByName(request,"userSession");
-            context.setAttribute("question", service.getQuestionForUser(pollId, UserSessionStorage.getIdUser(session)));
+            context.setAttribute("question", service.getQuestionForUser(pollId, UserSessionStorage.getUser(session).getId()));
         } catch (SelectException e) {
             context.setAttribute("error", EntityError.SELECT);
         }
@@ -62,7 +62,7 @@ public class VoteServlet extends HttpServlet {
             AnswerEntity answer = new AnswerEntity();
             answer.setAnswerDate((new Date((new java.util.Date()).getTime())));
             String session = CookieHelper.getCookieByName(request,"userSession");
-            answer.setVoterId(UserSessionStorage.getIdUser(session));
+            answer.setVoterId(UserSessionStorage.getUser(session).getId());
             answer.setVariantId(Integer.parseInt(request.getParameter("variantId")));
 
             service.saveAnswer(answer);

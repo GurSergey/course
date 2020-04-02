@@ -4,11 +4,11 @@
 <head>
     <title>Список открытых голосований</title>
     <style>
-        <%@include file="/css/style1.css"%>
+        <%@include file="/css/style.css"%>
     </style>
 </head>
 <body>
-<div class="panel">
+<jsp:include page="./nav.jsp" />
     <%@ page import="com.company.enums.EntityError" %>
     <c:if test="${error==EntityError.NO_ERROR_UPDATE}">
         <p style="color: green;">Запись успешно обновлена</p>
@@ -28,9 +28,14 @@
     <c:if test="${error==EntityError.UPDATE}">
         <p style="color: red;">Возникла ошибка обновления записей из БД. Повторите попытку позже</p>
     </c:if>
-    <h1>Заголовок голосования - ${poll.title}</h1>
+    <h3> Голосование - "${poll.title}"</h3>
+    <h4>Список вопросов:</h4>
     <c:forEach var="question" items="${poll.questions}">
-        <p>${question.question}</p>
+        <div class="row">
+        <div class="col s12 m12">
+        <div class="card-panel white">
+
+        <h5>${question.question}</h5>
         <p>Всего высказалось по этому вопросу - ${question.questionsStatistics.countAnswers} человек</p>
         <c:forEach var="variant" items="${question.variants}">
             <p>${variant.text}. количество проголосовавших ${variant.variantStatistics.countAnswers} Процент
@@ -40,8 +45,11 @@
             <br>
         </c:forEach>
         <br>
+        </div>
+        </div>
+        </div>
     </c:forEach>
+    <jsp:include page="./footer.jsp" />
 
-</div>
 </body>
 </html>

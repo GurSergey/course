@@ -52,7 +52,7 @@ public class UserAuthServlet extends HttpServlet {
             throws ServletException, IOException {
         boolean authPassed = false;
         String session = CookieHelper.getCookieByName(request,"userSession");
-        if(session!= null && UserSessionStorage.getIdUser(session)!=null)
+        if(session!= null && UserSessionStorage.getUser(session)!=null)
             authPassed = true;
         ServletContext context = getServletContext();
         context.setAttribute("authPassed", authPassed);
@@ -70,7 +70,7 @@ public class UserAuthServlet extends HttpServlet {
             if(voter != null){
                 String sessionId = generateSessionId();
                 CookieHelper.setCookieByName(request, response, "userSession", sessionId, request.getContextPath() + "/user");
-                UserSessionStorage.setSession(sessionId, voter.getId());
+                UserSessionStorage.setSession(sessionId, voter);
                 context.setAttribute("authPassed", true);
             } else {
                 context.setAttribute("authPassed", false);

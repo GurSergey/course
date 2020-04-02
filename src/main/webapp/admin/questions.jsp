@@ -1,17 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="req" value="${pageContext.request}" />
+<c:set var="url">${pageContext.request.requestURL}</c:set>
+<c:set var="uri" value="${pageContext.request.requestURI}" />
+<c:set var="path" value="${fn:substring(url, 0, fn:length(url) -
+ fn:length(uri))}${req.contextPath}" />
+
+
 <html>
+
 <head>
     <title>Список голосований</title>
     <style>
-        <%@include file="../css/style1.css"%>
+        <%@include file="../css/style.css"%>
     </style>
 </head>
     <body>
+    <jsp:include page="../admin_nav.jsp" />
 
-    <div class="panel">
         <h1> Список вопросов в голосовании c идентификатором ${pollId}  </h1>
-        <a href="${breadCrumbs}">Вернуться к списку голосований</a>
+
         <%@ page import="com.company.enums.EntityError" %>
         <c:if test="${error==EntityError.NO_ERROR_UPDATE}">
             <p style="color: green;">Запись успешно обновлена</p>
@@ -35,6 +44,10 @@
         <c:forEach var="question" items="${questions}">
             <form action="" method="post" id="question_form_${question.id}"></form>
         </c:forEach>
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card-panel white">
+                    <a href="${path}/admin/polls/edit/">Вернуться к списку голосований</a>
         <table>
             <thead>
                 <tr>
@@ -48,13 +61,13 @@
                                  <tr>
                                     <td>${question.id}<input name="id" type="hidden" value="${question.id}" form="question_form_${question.id}">
                                         <input name="pollId" type="hidden" value="${pollId}" form="question_form_${question.id}"></td>
-                                    <td><input name="title" type="text" value="${question.question}" form="question_form_${question.id}"></td>
+                                    <td><input name="question" type="text" value="${question.question}" form="question_form_${question.id}"></td>
                                     <td><input name="createDate" type="date" form="question_form_${question.id}"
                                                value="${question.createdDate}"></td>
-                                    <td><input type="submit" name="update" value="Сохранить" form="question_form_${question.id}"></td>
-                                    <td><input type="submit" name="delete" value="Удалить" form="question_form_${question.id}"></td>
-                                    <td><a href="../../admin/variants/?questionId=${question.id}">
-                                        <button>Перейти к редактированию вариантов</button></a></td>
+                                    <td><input type="submit" class="waves-effect waves-light btn-small" name="update" value="Сохранить" form="question_form_${question.id}"></td>
+                                    <td><input type="submit" class="waves-effect waves-light btn-small" name="delete" value="Удалить" form="question_form_${question.id}"></td>
+                                    <td><a class="waves-effect waves-light btn-small" href="${path}/admin/variants/?questionId=${question.id}&pollId=${pollId}">
+                                        Перейти к редактированию вариантов</a></td>
                             </tr>
                         </c:forEach>
             </tbody>
@@ -62,7 +75,7 @@
         </div>
 
 
-        <div class="panel">
+
         <h3>Добавить новый вопрос</h3>
 
         <form action="" method="post" id="new_form"></form>
@@ -75,12 +88,18 @@
             </thead>
             <tr>
                 <td>
-                    <input name="title" type="text" value="" form="new_form">
+                    <input name="question" type="text" value="" form="new_form">
+                    <input name="pollId" type="hidden" value="${pollId}" form="new_form">
 <%--                    <input name="typeReq" type="hidden" value="save" form="new_form">--%>
                 </td>
-                <td><input type="submit" name="save" value="Сохранить" form="new_form"></td>
+                <td>
+                    <input type="submit" class="waves-effect waves-light btn-small" name="save" value="Сохранить" form="new_form"></td>
             </tr>
         </table>
+
+
+            </div>
         </div>
+    <jsp:include page="../footer.jsp" />
     </body>
 </html>

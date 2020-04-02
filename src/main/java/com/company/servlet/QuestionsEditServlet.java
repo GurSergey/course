@@ -45,6 +45,7 @@ public class QuestionsEditServlet extends HttpServlet {
         }
         try {
             QuestionsService service = new QuestionsService(new QuestionsRepositoryDB());
+            context.setAttribute("pollId", request.getParameter("pollId"));
             context.setAttribute("questions", service.getQuestionsByIdPoll(pollId));
         } catch (SelectException e) {
             context.setAttribute("error", EntityError.SELECT);
@@ -64,7 +65,7 @@ public class QuestionsEditServlet extends HttpServlet {
         questionEntity.setId(request.getParameterMap().containsKey("id") ? Integer.parseInt(request.getParameter("id"))
                 : -1);
         questionEntity.setQuestion( request.getParameter("question"));
-        questionEntity.setPollId( Integer.getInteger(request.getParameter("pollId")));
+        questionEntity.setPollId( Integer.parseInt(request.getParameter("pollId")));
         questionEntity.setCreatedDate(new Date((new java.util.Date()).getTime()));
         ServletContext context = this.getServletContext();
         try {
@@ -83,6 +84,7 @@ public class QuestionsEditServlet extends HttpServlet {
                 context.setAttribute("error", EntityError.NO_ERROR_DELETE);
             }
             context.setAttribute("questions", service.getQuestionsByIdPoll( pollId));
+            context.setAttribute("pollId", request.getParameter("pollId"));
         } catch (SelectException e){
             context.setAttribute("error", EntityError.SELECT);
         } catch (InsertException e){

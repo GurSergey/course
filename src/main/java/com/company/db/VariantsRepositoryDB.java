@@ -64,8 +64,9 @@ public class VariantsRepositoryDB implements VariantsRepository {
     public void updateVariant(VariantEntity variant) throws UpdateException {
         try (Connection connection = DBConnection.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE variants SET  " +
-                    "text = ? ");
+                    "text = ?  WHERE id = ?");
             preparedStatement.setString(1, variant.getText());
+            preparedStatement.setInt(2, variant.getId());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (SQLException e) {
