@@ -18,9 +18,9 @@ public class AdminListOfUserServlet extends HttpServlet {
         UserService service = new UserService(new UserRepositoryDB());
         try {
 
-            context.setAttribute("users", service.getAllUsers());
+            request.setAttribute("users", service.getAllUsers());
         } catch (SelectException e) {
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         context.getRequestDispatcher("/admin/user_list.jsp").forward(request, response);
     }

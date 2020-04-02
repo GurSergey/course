@@ -20,7 +20,7 @@
 
 
 <jsp:include page="../user_nav.jsp" />
-<jsp:include page="../absolute_path.jsp" />
+
 <div class="row">
     <div class="col s12 m12">
         <div class="card-panel white">

@@ -27,9 +27,9 @@ public class UserPollsServlet extends HttpServlet {
         String session = CookieHelper.getCookieByName(request,"userSession");
         try {
             PollEntity[] pollEntities = service.getPollsByUser(UserSessionStorage.getUser(session).getId());
-            context.setAttribute("polls", pollEntities);
+            request.setAttribute("polls", pollEntities);
         } catch (SelectException e) {
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         context.getRequestDispatcher("/user/my_polls.jsp").forward(request, response);
     }

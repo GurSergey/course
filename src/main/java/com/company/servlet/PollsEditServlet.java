@@ -30,9 +30,9 @@ public class PollsEditServlet extends HttpServlet {
         ServletContext context = this.getServletContext();
         try {
             PollsService service = new PollsService(new PollsRepositoryDB());
-            context.setAttribute("polls", service.getPolls());
+            request.setAttribute("polls", service.getPolls());
         } catch (SelectException e){
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         getServletContext().getRequestDispatcher("/admin/polls.jsp").forward(request, response);
     }
@@ -53,25 +53,25 @@ public class PollsEditServlet extends HttpServlet {
 
             if(request.getParameterMap().containsKey("save")){
                 service.savePoll(pollEntity);
-                context.setAttribute("error", EntityError.NO_ERROR_INSERT);
+                request.setAttribute("error", EntityError.NO_ERROR_INSERT);
             }
             if(request.getParameterMap().containsKey( "update")){
                 service.updatePoll(pollEntity);
-                context.setAttribute("error", EntityError.NO_ERROR_UPDATE);
+                request.setAttribute("error", EntityError.NO_ERROR_UPDATE);
             }
             if(request.getParameterMap().containsKey("delete")){
                 service.deletePoll(pollEntity);
-                context.setAttribute("error", EntityError.NO_ERROR_DELETE);
+                request.setAttribute("error", EntityError.NO_ERROR_DELETE);
             }
-            context.setAttribute("polls", service.getPolls());
+            request.setAttribute("polls", service.getPolls());
         } catch (SelectException e){
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         } catch (InsertException e){
-            context.setAttribute("error", EntityError.INSERT);
+            request.setAttribute("error", EntityError.INSERT);
         } catch (UpdateException e) {
-            context.setAttribute("error", EntityError.UPDATE);
+            request.setAttribute("error", EntityError.UPDATE);
         } catch (DeleteException e) {
-            context.setAttribute("error", EntityError.DELETE);
+            request.setAttribute("error", EntityError.DELETE);
         }
         getServletContext().getRequestDispatcher("/admin/polls.jsp").forward(request, response);
     }

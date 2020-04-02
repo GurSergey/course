@@ -14,7 +14,7 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Перейти</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/admin/menu">К админке</a></li>
+                    <li><span class="red-text">Сверхсекретно!</span> <a class="grey-text text-lighten-3" href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/admin/menu">К админке</a></li>
                 </ul>
             </div>
         </div>

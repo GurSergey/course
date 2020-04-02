@@ -12,7 +12,7 @@ CREATE TABLE poll(
 	title varchar(255) NOT NULL,
 	visible boolean NOT NULL,
 	date_to date NOT NULL,
-	start_date date NOT NULL CHECK (date_to < start_date ),
+	start_date date NOT NULL CHECK (date_to > start_date ),
 	create_date date NOT NULL
 );
 
@@ -30,7 +30,7 @@ CREATE TABLE variants(
 );
 
 CREATE TABLE answer(
-	id serial PRIMARY KEY,
+	id serial PRIMARY KEY ,
 	voter_id int NOT NULL REFERENCES voter(id) ON DELETE CASCADE,
 	variant_id int NOT NULL REFERENCES variants(id) ON DELETE CASCADE,
 	answer_date date NOT NULL
@@ -38,10 +38,10 @@ CREATE TABLE answer(
 
 
 INSERT INTO voter
-VALUES (1,'11.11.2019', 'Ivan', '1720e61cd37718a479b0ff153d374aed', '89171231234'),
-       (2,'11.10.2019', 'Serge', '74ce383083e38d12007cdffcd6fe5448', '89174561234'),
-       (3,'10.10.2019', 'Nikolay', '6f1a41ff6dae02f091f5db87223b080e', '89674561234'),
-       (4,'10.10.2019', 'Olga', '29069193701fce7e4a7a121cc3a70867', '89674561534');
+VALUES (1,'11.11.2019', 'Test', '1720e61cd37718a479b0ff153d374aed', 'test', '89171231234'),
+       (2,'11.10.2019', 'Serge', '74ce383083e38d12007cdffcd6fe5448', 'serge','89174561234'),
+       (3,'10.10.2019', 'Test1', '6f1a41ff6dae02f091f5db87223b080e', 'test1','89674561234'),
+       (4,'10.10.2019', 'Test2', '29069193701fce7e4a7a121cc3a70867', 'test2','89674561534');
 
 INSERT INTO poll
 VALUES (1, 'Опрос о реконструкции парка.', true, '10.10.2019', '12.10.2019', '11.10.2019');

@@ -34,7 +34,7 @@ public class AdminAuthServlet extends HttpServlet {
         if(session!= null && AdminSessionStorage.sessionIsActive(session))
             authPassed = true;
         ServletContext context = getServletContext();
-        context.setAttribute("authPassed", authPassed);
+        request.setAttribute("authPassed", authPassed);
         context.getRequestDispatcher("/admin/auth.jsp").forward(request, response);
     }
 

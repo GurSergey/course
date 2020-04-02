@@ -11,7 +11,7 @@
             <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/polls/result/">Результаты голосований</a></li>
             <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/polls/open/">Открытые голосования</a></li>
             <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user/menu">Меню пользователя</a></li>
-            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user_registration">Зарегестрироваться</a></li>
+            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user_registration">Зарегистрироваться</a></li>
             <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user_auth">Авторизоваться</a></li>
 <%--            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user/open/">Открытые голосования</a></li>--%>
 <%--            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/polls/result/">Завершенных голосования</a></li>--%>

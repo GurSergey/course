@@ -48,9 +48,9 @@ public class VoteServlet extends HttpServlet {
         try {
             QuestionsService service = new QuestionsService(new QuestionsRepositoryDB());
             String session = CookieHelper.getCookieByName(request,"userSession");
-            context.setAttribute("question", service.getQuestionForUser(pollId, UserSessionStorage.getUser(session).getId()));
+            request.setAttribute("question", service.getQuestionForUser(pollId, UserSessionStorage.getUser(session).getId()));
         } catch (SelectException e) {
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         getServletContext().getRequestDispatcher("/user/vote.jsp").forward(request, response);
     }
@@ -67,7 +67,7 @@ public class VoteServlet extends HttpServlet {
 
             service.saveAnswer(answer);
         } catch (InsertException e) {
-            context.setAttribute("error", EntityError.INSERT);
+            request.setAttribute("error", EntityError.INSERT);
         }
         this.doGet(request, response);
     }

@@ -41,7 +41,9 @@
             <div class="col s12 m12">
                 <div class="card">
                     <div class="card-content black-text">
-                        <span class="card-title">Голосование "${question.poll.title}"</span>
+                        <c:if test="${question != null}">
+                            <span class="card-title">Голосование "${question.poll.title}"</span>
+                        </c:if>
                         <c:if test="${question == null}">
                             <p>В этом голосовании еще нет доступных вам вопросов, на которые вы еще не ответили.
                                 Пожалуйста, вернитесь к списку доступных голосований <a href="${path}/user/open/">Список</a>  </p>

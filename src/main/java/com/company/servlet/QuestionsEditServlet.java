@@ -45,10 +45,10 @@ public class QuestionsEditServlet extends HttpServlet {
         }
         try {
             QuestionsService service = new QuestionsService(new QuestionsRepositoryDB());
-            context.setAttribute("pollId", request.getParameter("pollId"));
-            context.setAttribute("questions", service.getQuestionsByIdPoll(pollId));
+            request.setAttribute("pollId", request.getParameter("pollId"));
+            request.setAttribute("questions", service.getQuestionsByIdPoll(pollId));
         } catch (SelectException e) {
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         getServletContext().getRequestDispatcher("/admin/questions.jsp").forward(request, response);
     }
@@ -73,26 +73,26 @@ public class QuestionsEditServlet extends HttpServlet {
 
             if(request.getParameterMap().containsKey("save")){
                 service.saveQuestion(questionEntity);
-                context.setAttribute("error", EntityError.NO_ERROR_INSERT);
+                request.setAttribute("error", EntityError.NO_ERROR_INSERT);
             }
             if(request.getParameterMap().containsKey( "update")){
                 service.updateQuestion(questionEntity);
-                context.setAttribute("error", EntityError.NO_ERROR_UPDATE);
+                request.setAttribute("error", EntityError.NO_ERROR_UPDATE);
             }
             if(request.getParameterMap().containsKey("delete")){
                 service.deleteQuestion(questionEntity);
-                context.setAttribute("error", EntityError.NO_ERROR_DELETE);
+                request.setAttribute("error", EntityError.NO_ERROR_DELETE);
             }
-            context.setAttribute("questions", service.getQuestionsByIdPoll( pollId));
-            context.setAttribute("pollId", request.getParameter("pollId"));
+            request.setAttribute("questions", service.getQuestionsByIdPoll( pollId));
+            request.setAttribute("pollId", request.getParameter("pollId"));
         } catch (SelectException e){
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         } catch (InsertException e){
-            context.setAttribute("error", EntityError.INSERT);
+            request.setAttribute("error", EntityError.INSERT);
         } catch (UpdateException e) {
-            context.setAttribute("error", EntityError.UPDATE);
+            request.setAttribute("error", EntityError.UPDATE);
         } catch (DeleteException e) {
-            context.setAttribute("error", EntityError.DELETE);
+            request.setAttribute("error", EntityError.DELETE);
         }
         getServletContext().getRequestDispatcher("/admin/questions.jsp").forward(request, response);
     }

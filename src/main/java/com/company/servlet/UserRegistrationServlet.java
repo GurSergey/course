@@ -38,7 +38,7 @@ public class UserRegistrationServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath()+"/user_auth");
 //            context.getRequestDispatcher("/user_auth.jsp").forward(request, response);
         } catch (InsertException e) {
-            context.setAttribute("error", EntityError.INSERT);
+            request.setAttribute("error", EntityError.INSERT);
             context.getRequestDispatcher("/user/registration.jsp").forward(request, response);
         }
 

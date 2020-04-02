@@ -26,10 +26,10 @@ public class UserEditProfileServlet extends HttpServlet {
         try {
             String session = CookieHelper.getCookieByName(request,"userSession");
             VoterEntity voter = service.getVoterById(UserSessionStorage.getUser(session).getId());
-            context.setAttribute("voter", voter);
-            context.setAttribute("error", EntityError.NO_ERROR_UPDATE);
+            request.setAttribute("voter", voter);
+            request.setAttribute("error", EntityError.NO_ERROR_UPDATE);
         } catch ( SelectException e) {
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         context.getRequestDispatcher("/user/edit_profile.jsp").forward(request, response);
 
@@ -39,16 +39,18 @@ public class UserEditProfileServlet extends HttpServlet {
         ServletContext context = getServletContext();
         UserService service = new UserService(new UserRepositoryDB());
         VoterEntity voter = new VoterEntity();
+        voter.setId(Integer.parseInt(request.getParameter("id")));
         voter.setName(request.getParameter("name"));
         voter.setPassword(request.getParameter("password"));
         voter.setPhone(request.getParameter("phone"));
         try {
             service.updateVoter(voter);
-            context.setAttribute("error", EntityError.NO_ERROR_UPDATE);
+            request.setAttribute("error", EntityError.NO_ERROR_UPDATE);
         } catch (UpdateException e) {
-            context.setAttribute("error", EntityError.UPDATE);
+            request.setAttribute("error", EntityError.UPDATE);
         }
-        context.getRequestDispatcher("/user/edit_profile.jsp").forward(request, response);
+        doGet(request,response);
+//        context.getRequestDispatcher("/user/edit_profile.jsp").forward(request, response);
 
     }
 }

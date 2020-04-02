@@ -14,7 +14,8 @@
             <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user/open/">Открытые голосования</a></li>
             <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/polls/result/">Завершенных голосования</a></li>
             <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user/polls/">Мои голосования</a></li>
-            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user/edit_profile/"> Редактировать профиль</a></li>
+            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user/edit_profile/">Редактировать профиль</a></li>
+            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/user/logout/"> Выйти из профиля, ${userName}</a></li>
 
         </ul>
     </div>

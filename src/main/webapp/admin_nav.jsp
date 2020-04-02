@@ -5,7 +5,7 @@
 <c:set var="url">${req.requestURL}</c:set>
 <c:set var="uri" value="${req.requestURI}" />
 <nav>
-    <div class="nav-wrapper blue darken-4">
+    <div class="nav-wrapper orange darken-4">
         <a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}" class="brand-logo " style="margin-left: 20px">OSES</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
 <%--            <li><a href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/polls/result/">Результаты голосований</a></li>--%>

@@ -36,9 +36,9 @@ public class PollResultServlet extends HttpServlet {
         ServletContext context = this.getServletContext();
         try {
             PollEntity poll =  pollsService.getPollResult(getPollId(request));
-            context.setAttribute("poll", poll);
+            request.setAttribute("poll", poll);
         } catch (SelectException e) {
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         context.getRequestDispatcher("/result_poll.jsp").forward(request, response);
     }

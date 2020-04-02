@@ -45,7 +45,8 @@
                         <span class="card-title">Вход в систему</span>
                         <form action="" method="post">
                             <p>Редактирование профиля</p>
-                            <p>Имя: <input name="name" type="text" value="${voter.name}"></p>
+                            <p>Имя: <input name="name" type="text" value="${voter.name}">
+                                <input name="id" type="hidden" value="${voter.id}"></p>
                             <p>Пароль:<input name="password" type="password" value=""> </p>
                             <p>Повторите пароль:<input name="passwordRepeat" type="password" value=""></p>
                             <p>Телефон: <input name="phone" type="text" value="${voter.phone}"></p>

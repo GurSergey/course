@@ -55,7 +55,7 @@ public class UserAuthServlet extends HttpServlet {
         if(session!= null && UserSessionStorage.getUser(session)!=null)
             authPassed = true;
         ServletContext context = getServletContext();
-        context.setAttribute("authPassed", authPassed);
+        request.setAttribute("authPassed", authPassed);
         context.getRequestDispatcher("/user/auth.jsp").forward(request, response);
     }
 
@@ -71,9 +71,11 @@ public class UserAuthServlet extends HttpServlet {
                 String sessionId = generateSessionId();
                 CookieHelper.setCookieByName(request, response, "userSession", sessionId, request.getContextPath() + "/user");
                 UserSessionStorage.setSession(sessionId, voter);
-                context.setAttribute("authPassed", true);
+                request.setAttribute("authPassed", true);
+                response.sendRedirect(request.getContextPath() + "/user/menu");
+                return;
             } else {
-                context.setAttribute("authPassed", false);
+                request.setAttribute("authPassed", false);
             }
         } catch (SelectException e) {
             e.printStackTrace();

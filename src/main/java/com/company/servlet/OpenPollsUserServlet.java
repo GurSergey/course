@@ -24,9 +24,9 @@ public class OpenPollsUserServlet extends HttpServlet {
         PollsService service = new PollsService(new PollsRepositoryDB());
         try {
             PollEntity[] pollEntities = service.getAllOpenPolls();
-            context.setAttribute("polls", pollEntities);
+            request.setAttribute("polls", pollEntities);
         } catch (SelectException e) {
-            context.setAttribute("error", EntityError.SELECT);
+            request.setAttribute("error", EntityError.SELECT);
         }
         context.getRequestDispatcher("/user/open_polls.jsp").forward(request, response);
 
