@@ -8,31 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77ab5f19-9232-4468-8ee4-2bb7e7c1ad53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminAuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminAuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminListOfUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/AdminListOfUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/OpenPollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/OpenPollsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/OpenPollsUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/OpenPollsUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollResultServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsEditServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/PollsResultServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/QuestionsEditServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAnswersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAnswersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserAuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserEditProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserEditProfileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserPollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserPollsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserRegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/UserRegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/VariantsEditServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/servlet/VoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/servlet/VoteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_nav.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/nav.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/edit_profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/edit_profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/logout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/vote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/vote.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_nav.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/db/PollsRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/db/QuestionsRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/db/QuestionsRepositoryDB.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +208,8 @@
       <workItem from="1585562870551" duration="30000" />
       <workItem from="1585636262734" duration="29857000" />
       <workItem from="1585720496557" duration="36972000" />
-      <workItem from="1585805454478" duration="22176000" />
+      <workItem from="1585805454478" duration="23561000" />
+      <workItem from="1585885847886" duration="1795000" />
     </task>
     <servers />
   </component>

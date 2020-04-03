@@ -91,7 +91,7 @@ public class PollsRepositoryDB implements PollsRepository {
     @Override
     public void deletePoll(PollEntity poll) throws DeleteException {
         try (Connection connection = DBConnection.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE poll WWHERE id = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM poll WHERE id = ?");
             preparedStatement.setInt(1, poll.getId());
             preparedStatement.execute();
             preparedStatement.close();

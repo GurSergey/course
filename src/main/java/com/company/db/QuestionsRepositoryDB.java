@@ -84,7 +84,7 @@ public class QuestionsRepositoryDB implements QuestionsRepository {
     @Override
     public void deleteQuestion(QuestionEntity question) throws DeleteException {
         try (Connection connection = DBConnection.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE question WWHERE id = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM question WHERE id = ?");
             preparedStatement.setInt(1, question.getId());
             preparedStatement.execute();
             preparedStatement.close();
